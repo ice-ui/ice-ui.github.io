@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://xulibin123.gitee.io/ice-ui.github.io">
-  <title>HTML5新特性 | Hexo</title>
+  <title>继承的实现 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="HTML5新特性">
+  <meta name="description" content="继承">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML5新特性">
-<meta property="og:url" content="http://xulibin123.gitee.io/ice-ui.github.io/2020/07/18/html5%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B0%E7%89%B9%E6%80%A7/index.html">
+<meta property="og:title" content="继承的实现">
+<meta property="og:url" content="http://xulibin123.gitee.io/ice-ui.github.io/2020/08/13/%E7%BB%A7%E6%89%BF/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="HTML5新特性">
+<meta property="og:description" content="继承">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-18T07:05:39.045Z">
-<meta property="article:modified_time" content="2020-07-18T07:09:06.057Z">
+<meta property="article:published_time" content="2020-08-13T07:30:52.169Z">
+<meta property="article:modified_time" content="2020-08-13T07:31:56.184Z">
 <meta property="article:author" content="ice-ui">
-<meta property="article:tag" content="HTML5">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -156,20 +156,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-html5有哪些新特性" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-继承" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      HTML5新特性
+      继承的实现
     </h1>
   
 
         
-        <a href="/ice-ui.github.io/2020/07/18/html5%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B0%E7%89%B9%E6%80%A7/" class="archive-article-date">
-  	<time datetime="2020-07-18T07:05:39.045Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
+        <a href="/ice-ui.github.io/2020/08/13/%E7%BB%A7%E6%89%BF/" class="archive-article-date">
+  	<time datetime="2020-08-13T07:30:52.169Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
 </a>
         
 
@@ -181,102 +181,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="HTML5新特性"><a href="#HTML5新特性" class="headerlink" title="HTML5新特性"></a>HTML5新特性</h3><a id="more"></a>
+        <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><a id="more"></a>
 
-<h4 id="一：声明方式："><a href="#一：声明方式：" class="headerlink" title="一：声明方式："></a>一：声明方式：</h4><ol>
-<li>HTML4规定了三种声明方式，分别是：严格模式、过渡模式和框架模式；HTML5因为不是SGML的子集，只需要&lt;!DOCTYPE&gt;就可以。<strong><!DOCTYPE html></strong></li>
-</ol>
-<h4 id="二：语义化更好的内容标签"><a href="#二：语义化更好的内容标签" class="headerlink" title="二：语义化更好的内容标签"></a>二：语义化更好的内容标签</h4><ol>
-<li>header</li>
-<li>footer</li>
-<li>article</li>
-<li>aside</li>
-<li>section</li>
-<li>details</li>
-<li>summary</li>
-<li>dialog</li>
-</ol>
-<h4 id="三、音频、视频"><a href="#三、音频、视频" class="headerlink" title="三、音频、视频"></a>三、音频、视频</h4><ol>
-<li>audio</li>
-<li>video</li>
-</ol>
-<h4 id="四、表单控件"><a href="#四、表单控件" class="headerlink" title="四、表单控件"></a>四、表单控件</h4><ol>
-<li>color:用于选取颜色</li>
-<li>date:从一个日期选择器选择一个日期</li>
-<li>datetime:选择一个日期(UTC时间)</li>
-<li>datetime-local：选择一个日期和时间（无时区）</li>
-<li>email:包含email地址的输入域</li>
-<li>month:选择月份</li>
-<li>number:包含数值的输入域</li>
-</ol>
-<blockquote>
-<input type="number" name="quantity" min="1" max="5">
-</blockquote>
-<ol start="8">
-<li>range:包含一定范围内数字值的输入域。</li>
-<li>search:搜索域</li>
-<li>tel:定义输入电话号码字段</li>
-<li>time:定义可输入时间控制器</li>
-<li>url:用于应该包含URL地址的输入域</li>
-</ol>
-<h3 id="HTML5引入新的表单属性"><a href="#HTML5引入新的表单属性" class="headerlink" title="HTML5引入新的表单属性"></a>HTML5引入新的表单属性</h3><ol>
-<li>form新属性</li>
-</ol>
-<ul>
-<li>autocomplete</li>
-<li>novalidate</li>
-</ul>
-<ol start="2">
-<li>input新属性</li>
-</ol>
-<ul>
-<li>autocomplete</li>
-<li>autofocus</li>
-<li>form</li>
-<li>formaction</li>
-<li>formenctype</li>
-<li>formethod</li>
-<li>formnovalidate</li>
-<li>formtarget</li>
-<li>height和width</li>
-<li>list</li>
-<li>min、max</li>
-<li>multiple</li>
-<li>pattern</li>
-<li>placeholder</li>
-<li>required</li>
-<li>step</li>
-</ul>
-<h4 id="HTML5的音频和视频属性"><a href="#HTML5的音频和视频属性" class="headerlink" title="HTML5的音频和视频属性"></a>HTML5的音频和视频属性</h4><p>支持的格式包括MP3、Wav和Ogg</p>
-<figure class="highlight plain"><figcaption><span>>:用于在文档中表示音频文件，可以包含多个音频资源，可以使用src属性或者<sourse>元素来进行描述```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### 第一种写法：</span><br><span class="line"></span><br><span class="line">&gt; &#96;&#96;&#96;&lt;audio src&#x3D;&quot;***.mp3&quot;&gt;&lt;&#x2F;audio&gt;</span><br></pre></td></tr></table></figure>
-
-<h5 id="第二种写法："><a href="#第二种写法：" class="headerlink" title="第二种写法："></a>第二种写法：</h5><blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio controls&gt;</span><br><span class="line">  &lt;source src&#x3D;&quot;a.mp3&quot; type&#x3D;&quot;audio&#x2F;mpeg&quot;&gt;</span><br><span class="line">  您的浏览器不支持音频嵌入功能</span><br><span class="line">  &lt;&#x2F;audio&gt;</span><br></pre></td></tr></table></figure>
-
-
-</blockquote>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;audio controls&#x3D;&quot;controls&quot;&gt;</span><br><span class="line">&lt;sourse src&#x3D;&quot;a.ogv&quot; type&#x3D;&quot;audio&#x2F;wav&quot;&gt;</span><br><span class="line">&lt;sourse src&#x3D;&quot;b.mp3 type&#x3D;&quot;audio&#x2F;mpeg&gt;</span><br><span class="line">您的浏览器不支持audio元素</span><br><span class="line">&lt;&#x2F;audio&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-</blockquote>
-<h4 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h4><p>支持的格式包括：MP4、WebM和Ogg</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;video controls width&#x3D;&quot;200&quot;</span><br><span class="line">&lt;sourse src&#x3D;&quot;flower.webm&quot; type&#x3D;&quot;video&#x2F;webm&quot;&gt;</span><br><span class="line">&lt;sourse src&#x3D;&quot;flower.mp4&quot; type&#x3D;&quot;video&#x2F;mp4&quot;&gt;</span><br><span class="line">您的浏览器不支持video标签</span><br><span class="line">&lt;&#x2F;video&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-</blockquote>
-<h4 id="HTML5支持的新媒体元素"><a href="#HTML5支持的新媒体元素" class="headerlink" title="HTML5支持的新媒体元素"></a>HTML5支持的新媒体元素</h4><p><strong><embeb></strong>:定义嵌入的内容，比如插件</p>
-<blockquote>
-<embeb type="video/quicktime" src="Fishing.mov">
-</blockquote>
-<p><strong><source></strong>:定义多个数据源很有用</p>
-<p><strong><track></strong>：为诸如video元素之类的媒体规定外部文本轨道。用于规定字幕文件或其他包含文本的文件，当媒介播放时，这些文件是可见的。</p>
-<h4 id="Doctype文档类型"><a href="#Doctype文档类型" class="headerlink" title="Doctype文档类型"></a>Doctype文档类型</h4><p>三种DTD类型：严格版本、过渡版本以及基于框架的HTML文档。</p>
-<p>HTML4.01规定了三种文档类型：Strict、Transitional以及Fraeset。</p>
-<p>XHTML1.0规定了三种XML文档类型：Strict、Transitional以及Fraeset。</p>
-<p>Standards模式（严格模式）用于呈现遵循最新标准的网页。</p>
-<p>Quirks模式（松散呈现模式或者兼容模式）用于呈现为传统浏览器而设计的网页。</p>
 
       
 
@@ -312,7 +218,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HTML5</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
         		</li>
       		
 		</ul>
@@ -368,7 +274,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://xulibin123.gitee.io/ice-ui.github.io/2020/07/18/html5%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B0%E7%89%B9%E6%80%A7/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://xulibin123.gitee.io/ice-ui.github.io/2020/08/13/%E7%BB%A7%E6%89%BF/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -382,18 +288,9 @@
   
 <nav id="article-nav">
   
-    <a href="/ice-ui.github.io/2020/08/12/%E6%95%B0%E7%BB%84/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数组总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/ice-ui.github.io/2020/06/30/%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">javascript创建对象</div>
+    <a href="/ice-ui.github.io/2020/08/13/%E5%AD%97%E7%AC%A6%E4%B8%B2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">字符串类型总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -420,7 +317,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5新特性"><span class="toc-number">1.</span> <span class="toc-text">HTML5新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一：声明方式："><span class="toc-number">1.1.</span> <span class="toc-text">一：声明方式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二：语义化更好的内容标签"><span class="toc-number">1.2.</span> <span class="toc-text">二：语义化更好的内容标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、音频、视频"><span class="toc-number">1.3.</span> <span class="toc-text">三、音频、视频</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、表单控件"><span class="toc-number">1.4.</span> <span class="toc-text">四、表单控件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5引入新的表单属性"><span class="toc-number">2.</span> <span class="toc-text">HTML5引入新的表单属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML5的音频和视频属性"><span class="toc-number">2.1.</span> <span class="toc-text">HTML5的音频和视频属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#第二种写法："><span class="toc-number">2.1.1.</span> <span class="toc-text">第二种写法：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#视频"><span class="toc-number">2.2.</span> <span class="toc-text">视频</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML5支持的新媒体元素"><span class="toc-number">2.3.</span> <span class="toc-text">HTML5支持的新媒体元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Doctype文档类型"><span class="toc-number">2.4.</span> <span class="toc-text">Doctype文档类型</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#继承"><span class="toc-number">1.</span> <span class="toc-text">继承</span></a></li></ol>
                     </div>
                 </span>
             </div>
