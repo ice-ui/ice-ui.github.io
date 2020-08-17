@@ -6,20 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://xulibin123.gitee.io/ice-ui">
-  <title>字符串类型 | Hexo</title>
+  <title>拖动模态框 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="获取单个字符 charAt():获取单个字符；可以接收一个表示位置的参数。 charCodeAt():获取单个字符的字符编码。 使用数组名加[索引]方式获取。  拼接字符串 concat():将一个或多个字符串拼接。接收任意多个参数。 +号拼接：拼接多个字符串更简单。  分隔字符串 slice():接收一个或两个参数（指定字符串开始位置，结束位置）。接收一个参数，默认为在字符串末尾结束； subs">
-<meta property="og:type" content="article">
-<meta property="og:title" content="字符串类型">
-<meta property="og:url" content="http://xulibin123.gitee.io/ice-ui/2020/08/13/%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="拖动模态框">
+<meta property="og:url" content="http://xulibin123.gitee.io/ice-ui/2020/08/17/%E6%8B%96%E5%8A%A8%E6%A8%A1%E6%80%81%E6%A1%86/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="获取单个字符 charAt():获取单个字符；可以接收一个表示位置的参数。 charCodeAt():获取单个字符的字符编码。 使用数组名加[索引]方式获取。  拼接字符串 concat():将一个或多个字符串拼接。接收任意多个参数。 +号拼接：拼接多个字符串更简单。  分隔字符串 slice():接收一个或两个参数（指定字符串开始位置，结束位置）。接收一个参数，默认为在字符串末尾结束； subs">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-13T06:51:35.942Z">
-<meta property="article:modified_time" content="2020-08-17T01:47:30.915Z">
+<meta property="article:published_time" content="2020-08-17T02:51:01.448Z">
+<meta property="article:modified_time" content="2020-08-17T02:51:01.448Z">
 <meta property="article:author" content="ice-ui">
-<meta property="article:tag" content="javascript">
-<meta property="article:tag" content="Array">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -157,20 +153,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-字符串" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-拖动模态框" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      字符串类型
+      拖动模态框
     </h1>
   
 
         
-        <a href="/ice-ui/2020/08/13/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="archive-article-date">
-  	<time datetime="2020-08-13T06:51:35.942Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
+        <a href="/ice-ui/2020/08/17/%E6%8B%96%E5%8A%A8%E6%A8%A1%E6%80%81%E6%A1%86/" class="archive-article-date">
+  	<time datetime="2020-08-17T02:51:01.448Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
 </a>
         
 
@@ -182,41 +178,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="获取单个字符"><a href="#获取单个字符" class="headerlink" title="获取单个字符"></a>获取单个字符</h4><ol>
-<li><strong>charAt()</strong>:获取单个字符；可以接收一个表示位置的参数。</li>
-<li><strong>charCodeAt()</strong>:获取单个字符的字符编码。</li>
-<li><strong>使用数组名加[索引]方式获取</strong>。</li>
-</ol>
-<h4 id="拼接字符串"><a href="#拼接字符串" class="headerlink" title="拼接字符串"></a>拼接字符串</h4><ol>
-<li><strong>concat()</strong>:将一个或多个字符串拼接。接收任意多个参数。</li>
-<li><strong>+号拼接</strong>：拼接多个字符串更简单。</li>
-</ol>
-<h4 id="分隔字符串"><a href="#分隔字符串" class="headerlink" title="分隔字符串"></a>分隔字符串</h4><ol>
-<li><strong>slice()</strong>:接收一个或两个参数（指定字符串开始位置，结束位置）。接收一个参数，默认为在字符串末尾结束；</li>
-<li><strong>substr()</strong>:接收一个或两个参数（指定字符串开始位置，截取的长度）。</li>
-<li><strong>substring()</strong>:接收一个或两个参数（指定字符串开始位置，结束位置（但不包含））。</li>
-</ol>
-<blockquote>
-<p>但是如果传递给三个方法的参数是<strong>负值</strong>的情况下，slice会将传入的负值与字符串长度相加；substr()会将负的第一个参数加上字符串的长度，负的第二个参数转换为0；substring()会把所有负值参数都转化为0。</p>
-</blockquote>
-<h4 id="字符串位置方法"><a href="#字符串位置方法" class="headerlink" title="字符串位置方法"></a>字符串位置方法</h4><p><strong>通常用这个方法来检测字符串是否包含某个字符</strong></p>
-<ol>
-<li><strong>indexOf()</strong>:从字符串开头搜索字符串，返回字符串的位置。</li>
-<li><strong>lastIndexOf()</strong>:从字符串的末尾开始向前搜索字符串，返回的是正向索引。</li>
-<li><strong>trim()</strong>:删除前置及后缀的所有空格（创建的是副本，不影响原始字符串）。</li>
-</ol>
-<h4 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h4><ol>
-<li><strong>toLowerCase()/toLocalLowerCase()</strong>:转换为小写。</li>
-<li><strong>toUpperCase()/toLocalUpperCase()</strong>:转化为大写。</li>
-</ol>
-<h4 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h4><ol>
-<li><strong>mach()</strong>:</li>
-<li><strong>replace()</strong>:</li>
-<li><strong>split()</strong>:</li>
-</ol>
-<h3 id="下面是有关字符串的一些案例"><a href="#下面是有关字符串的一些案例" class="headerlink" title="下面是有关字符串的一些案例"></a>下面是有关字符串的一些案例</h3><h5 id="判断一个字符串中出现次数最多的字符，并统计其个数。"><a href="#判断一个字符串中出现次数最多的字符，并统计其个数。" class="headerlink" title="判断一个字符串中出现次数最多的字符，并统计其个数。"></a>判断一个字符串中出现次数最多的字符，并统计其个数。</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = “sdsdsdasiencwmsaklaa”;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="keyword">var</span> num;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,len = str.length;i&lt;len;i++)&#123;</span><br><span class="line">   num = str[i];</span><br><span class="line">   <span class="keyword">if</span>(!obj[num])&#123;</span><br><span class="line">     obj[num] = <span class="number">1</span>;</span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">     obj[num]++;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> max_key,max_num=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">   <span class="keyword">if</span>(max_num &lt;obj[key])&#123;</span><br><span class="line">     max_num = obj[key];</span><br><span class="line">     max_key = key;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;;    </span><br><span class="line"><span class="built_in">document</span>.write(“字母：”+max_key+”　次数：”+max_num);</span><br></pre></td></tr></table></figure>
-
-
+        
       
 
       
@@ -224,21 +186,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -289,7 +236,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://xulibin123.gitee.io/ice-ui/2020/08/13/%E5%AD%97%E7%AC%A6%E4%B8%B2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://xulibin123.gitee.io/ice-ui/2020/08/17/%E6%8B%96%E5%8A%A8%E6%A8%A1%E6%80%81%E6%A1%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -303,18 +250,9 @@
   
 <nav id="article-nav">
   
-    <a href="/ice-ui/2020/08/13/%E7%BB%A7%E6%89%BF/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          继承的实现
-        
-      </div>
-    </a>
   
-  
-    <a href="/ice-ui/2020/08/12/%E6%95%B0%E7%BB%84/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数组类型</div>
+    <a href="/ice-ui/2020/08/17/%E8%B4%AA%E5%90%83%E8%9B%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">贪吃蛇</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -341,7 +279,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#获取单个字符"><span class="toc-number">1.</span> <span class="toc-text">获取单个字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#拼接字符串"><span class="toc-number">2.</span> <span class="toc-text">拼接字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分隔字符串"><span class="toc-number">3.</span> <span class="toc-text">分隔字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串位置方法"><span class="toc-number">4.</span> <span class="toc-text">字符串位置方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#大小写转换"><span class="toc-number">5.</span> <span class="toc-text">大小写转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模式匹配"><span class="toc-number">6.</span> <span class="toc-text">模式匹配</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下面是有关字符串的一些案例"><span class="toc-number"></span> <span class="toc-text">下面是有关字符串的一些案例</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#判断一个字符串中出现次数最多的字符，并统计其个数。"><span class="toc-number">0.1.</span> <span class="toc-text">判断一个字符串中出现次数最多的字符，并统计其个数。</span></a></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
