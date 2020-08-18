@@ -16,7 +16,7 @@
 <meta property="og:description" content="javascript创建对象的几种方式">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-30T08:07:35.580Z">
-<meta property="article:modified_time" content="2020-07-13T23:56:10.144Z">
+<meta property="article:modified_time" content="2020-08-18T07:43:42.215Z">
 <meta property="article:author" content="ice-ui">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/ice-ui/assets/tx1.jpeg" class="js-avatar">
+			<img src="/assets/tx1.jpeg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">ice-ui</a></h1>
@@ -109,7 +109,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/ice-ui/assets/tx1.jpeg" class="js-avatar">
+				<img src="/assets/tx1.jpeg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">ice-ui</h1>
@@ -193,79 +193,43 @@
 <li>稳妥构造函数模式</li>
 </ol>
 <h5 id="javascript创建对象，使用内置对象或者各种自定义对象，写法很多，也能混合使用。"><a href="#javascript创建对象，使用内置对象或者各种自定义对象，写法很多，也能混合使用。" class="headerlink" title="javascript创建对象，使用内置对象或者各种自定义对象，写法很多，也能混合使用。"></a>javascript创建对象，使用内置对象或者各种自定义对象，写法很多，也能混合使用。</h5><p>1.对象字面量的方式</p>
-<blockquote>
-<p>person={</p>
-<p>name:”Bob”,</p>
-<p>age:12,</p>
-<p>job:”student”</p>
-<p>};</p>
-</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">person=&#123;</span><br><span class="line"></span><br><span class="line">name:”Bob”,</span><br><span class="line"></span><br><span class="line">age:<span class="number">12</span>,</span><br><span class="line"></span><br><span class="line">job:”student”</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
 <ol start="2">
 <li>用function来模拟无参的构造函数</li>
 </ol>
-<blockquote>
-<p>function Person(){}</p>
-<p>var person=new Person();</p>
-<p>person.name=“Bob”;</p>
-<p>person.age=12;</p>
-<p>person.work=function(){</p>
-<p>console.log(person.name+“hello”);</p>
-<p>}</p>
-<p>person.work();</p>
-</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person=<span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line">person.name=“Bob”;</span><br><span class="line"></span><br><span class="line">person.age=<span class="number">12</span>;</span><br><span class="line"></span><br><span class="line">person.work=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person.name+“hello”);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person.work();</span><br></pre></td></tr></table></figure>
+
+
+
 <ol start="3">
 <li>用function来模拟参构造函数来实现（用this关键字定义构造的上下文属性）</li>
 </ol>
-<blockquote>
-<p>function Person(name,age,job){</p>
-<p>this.name=name;</p>
-<p>this.age=age;</p>
-<p>this.job=job;</p>
-<p>this.sayName=function(){</p>
-<p>console.log(this.name);</p>
-<p>}</p>
-<p>}</p>
-<p>var person1=new Person(“Bob”,29,”Doctor”);</p>
-<p>person1.sayName();//调用sayName方法</p>
-</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.name=name;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.age=age;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.job=job;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person1=<span class="keyword">new</span> Person(“Bob”,<span class="number">29</span>,”Doctor”);</span><br><span class="line"></span><br><span class="line">person1.sayName();<span class="comment">//调用sayName方法</span></span><br></pre></td></tr></table></figure>
+
+
+
 <ol start="4">
 <li>用工厂方式来创建</li>
 </ol>
-<blockquote>
-<p>var person=new Object();</p>
-<p>person.name=“Bob”;</p>
-<p>person.age=12;</p>
-<p>person.sayName=function(){</p>
-<p>console.log(person.name);</p>
-<p>}</p>
-<p>person.sayName();</p>
-</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person=<span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"></span><br><span class="line">person.name=“Bob”;</span><br><span class="line"></span><br><span class="line">person.age=<span class="number">12</span>;</span><br><span class="line"></span><br><span class="line">person.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person.name);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person.sayName();</span><br></pre></td></tr></table></figure>
+
+
+
 <ol start="5">
 <li>用原型方式来创建</li>
 </ol>
-<blockquote>
-<p>function Person(){}</p>
-<p>Person.prototype.name=“Bob”;</p>
-<p>Person.prototype.eat=function(){</p>
-<p>console.log(this.name+“是个吃货”)；</p>
-<p>}</p>
-<p>var person=new Person();</p>
-<p>person.eat();</p>
-</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.name=“Bob”;</span><br><span class="line"></span><br><span class="line">Person.prototype.eat=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.name+“是个吃货”)；</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person=<span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line">person.eat();</span><br></pre></td></tr></table></figure>
+
+
+
 <ol start="6">
 <li>用混合方式来创建</li>
 </ol>
-<blockquote>
-<p>function Book(name,price){</p>
-<p>this.name=name;</p>
-<p>this.price=price;</p>
-<p>}</p>
-<p>Book.prototype.sell=function(){</p>
-<p>console.log(“我是”+this.name+”.我现在卖”+this.price+”元“);</p>
-<p>}</p>
-<p>var a=new Book(“小猪佩奇”,27);</p>
-<p>a.sell();</p>
-</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Book</span>(<span class="params">name,price</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.name=name;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.price=price;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Book.prototype.sell=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(“我是”+<span class="keyword">this</span>.name+”.我现在卖”+<span class="keyword">this</span>.price+”元“);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a=<span class="keyword">new</span> Book(“小猪佩奇”,<span class="number">27</span>);</span><br><span class="line"></span><br><span class="line">a.sell();</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -510,7 +474,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,7 +486,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -530,11 +494,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">prototype</a>
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Array</a>
+                <a href="javascript:void(0)" class="js-tag color5">prototype</a>
               </li>
              
               <li class="article-tag-list-item">
