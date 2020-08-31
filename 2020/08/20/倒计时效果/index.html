@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://xulibin123.gitee.io/ice-ui">
-  <title>拖动模态框 | Hexo</title>
+  <title>倒计时 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="拖动模态框">
+  <meta name="description" content="倒计时的实现">
 <meta property="og:type" content="article">
-<meta property="og:title" content="拖动模态框">
-<meta property="og:url" content="http://xulibin123.gitee.io/ice-ui/2020/08/17/%E6%8B%96%E5%8A%A8%E6%A8%A1%E6%80%81%E6%A1%86/index.html">
+<meta property="og:title" content="倒计时">
+<meta property="og:url" content="http://xulibin123.gitee.io/ice-ui/2020/08/20/%E5%80%92%E8%AE%A1%E6%97%B6%E6%95%88%E6%9E%9C/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="拖动模态框">
+<meta property="og:description" content="倒计时的实现">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-17T02:51:01.448Z">
-<meta property="article:modified_time" content="2020-08-20T08:54:58.341Z">
+<meta property="article:published_time" content="2020-08-20T08:55:30.126Z">
+<meta property="article:modified_time" content="2020-08-20T08:59:03.251Z">
 <meta property="article:author" content="ice-ui">
 <meta property="article:tag" content="javascript">
 <meta property="article:tag" content="html">
@@ -158,20 +158,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-拖动模态框" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-倒计时效果" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      拖动模态框
+      倒计时
     </h1>
   
 
         
-        <a href="/ice-ui/2020/08/17/%E6%8B%96%E5%8A%A8%E6%A8%A1%E6%80%81%E6%A1%86/" class="archive-article-date">
-  	<time datetime="2020-08-17T02:51:01.448Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
+        <a href="/ice-ui/2020/08/20/%E5%80%92%E8%AE%A1%E6%97%B6%E6%95%88%E6%9E%9C/" class="archive-article-date">
+  	<time datetime="2020-08-20T08:55:30.126Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
 </a>
         
 
@@ -183,18 +183,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="拖动模态框"><a href="#拖动模态框" class="headerlink" title="拖动模态框"></a>拖动模态框</h2><a id="more"></a>
+        <h3 id="倒计时的实现"><a href="#倒计时的实现" class="headerlink" title="倒计时的实现"></a>倒计时的实现</h3><a id="more"></a>
 
-<h4 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h4><ol>
-<li>点击弹出层，会弹出模态框，并且显示灰色半透明的遮挡层</li>
-<li>点击关闭按钮，可以关闭模态框，并且同时关闭灰色半透明遮挡层</li>
-<li>鼠标放到模态框最上面一层，可以拖动模态框在页面中移动。mousedown  mousemove</li>
-<li>鼠标松开，可以停止模态框移动 mouseup</li>
-<li>拖拽过程，鼠标移动过程中，获得最新的值赋给模态框的left和top值，这样模态框就可以跟着鼠标移动</li>
-<li>模态框真正的位置等于鼠标在页面的坐标减去鼠标则盒子中的坐标</li>
-<li>鼠标按下，要得到鼠标在盒子的坐标</li>
-<li>鼠标移动，就让模态框的坐标设置为：鼠标坐标减去鼠标在盒子内的坐标即可  注意移动事件必须写在按下事件里面，因为两个事件是一起发生的</li>
-<li>鼠标松开：解除鼠标移动事件 removeEventListner<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;login-header&quot;&gt;&lt;a href&#x3D;&quot;javascript:;&quot; id&#x3D;&quot;link&quot;&gt;点击，弹出登陆框&lt;&#x2F;a&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div  class&#x3D;&quot;login&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;login-title&quot;&gt;登陆会员</span><br><span class="line">         &lt;span&gt;&lt;a href&#x3D;&quot;javascript:;&quot; id&#x3D;&quot;closeBtn&quot;&gt;关闭&lt;&#x2F;a&gt;&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class&#x3D;&quot;login-input-content&quot;&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;login-input&quot;&gt;</span><br><span class="line">            &lt;label for&#x3D;&quot;&quot;&gt;用户名&lt;&#x2F;label&gt;</span><br><span class="line">            &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;请输入用户名&quot; name&#x3D;&quot;info[username]&quot; id&#x3D;&quot;username&quot;&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;login-input&quot;&gt;</span><br><span class="line">            &lt;label for&#x3D;&quot;&quot;&gt;登陆密码&lt;&#x2F;label&gt;</span><br><span class="line">            &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;请输入登陆密码&quot; name&#x3D;&quot;info[password]&quot; id&#x3D;&quot;password&quot;&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class&#x3D;&quot;login-button&quot;&gt;&lt;a href&#x3D;&quot;javascript:;&quot; id&#x3D;&quot;login-submit&quot;&gt;登陆会员&lt;&#x2F;a&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;login-bg&quot;&gt;&lt;&#x2F;div&gt;   &lt;!--遮盖层--&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">javascript部分</span><br><span class="line">&lt;script&gt;</span><br><span class="line">&#x2F;&#x2F;1.获取元素</span><br><span class="line">var link&#x3D;document.querySelector(&quot;#link&quot;);</span><br><span class="line">    var closeBtn&#x3D;document.querySelector(&quot;#closeBtn&quot;);</span><br><span class="line">    var login&#x3D;document.querySelector(&quot;.login&quot;);</span><br><span class="line">    var login_bg&#x3D;document.querySelector(&quot;.login-bg&quot;);</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;1,实现模态框和 遮挡层的显示与隐藏</span><br><span class="line">    link.addEventListener(&quot;click&quot;,function()&#123;</span><br><span class="line">        login.style.display&#x3D;&quot;block&quot;;</span><br><span class="line">        login_bg.style.display&#x3D;&quot;block&quot;;</span><br><span class="line">    &#125;)</span><br><span class="line">    closeBtn.addEventListener(&quot;click&quot;,function () &#123;</span><br><span class="line">        login.style.display&#x3D;&quot;none&quot;;</span><br><span class="line">        login_bg.style.display&#x3D;&quot;none&quot;;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;2，开始拖拽</span><br><span class="line">    var login_title&#x3D;document.querySelector(&quot;.login-title&quot;);</span><br><span class="line">    login_title.addEventListener(&quot;mousedown&quot;,function (e) &#123;  &#x2F;&#x2F;鼠标按下的时候，得到鼠标在盒子里面的坐标</span><br><span class="line">        var x&#x3D;e.pageX-login.offsetLeft;</span><br><span class="line">        var y&#x3D;e.pageY-login.offsetTop;</span><br><span class="line">        document.addEventListener(&quot;mousemove&quot;,move);  &#x2F;&#x2F;鼠标移动的时候，得到模态框的坐标</span><br><span class="line">        function move(e)&#123;</span><br><span class="line">            login.style.left&#x3D;e.pageX-x +&quot;px&quot;;</span><br><span class="line">            login.style.top&#x3D;e.pageY-y + &quot;px&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        document.addEventListener(&quot;mouseup&quot;,function()&#123;  &#x2F;&#x2F;鼠标弹起的时候，解除鼠标移动事件</span><br><span class="line">            document.removeEventListener(&quot;mousemove&quot;,move);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></li>
+<p>案例分析：</p>
+<ol>
+<li>倒计时是不断变化的，因此需要定时器来自动变化（<strong>setInterval</strong>)。</li>
+<li>这三个盒子里面分别存放时分秒。</li>
+<li>三个黑色盒子利用<strong>innerHTML</strong>放入计算的小时分钟秒数。</li>
+<li>第一次执行也是间隔毫秒数，因此刷新页面会有空白。最好采取封装函数的方式，这样可以先调用一次这个函数，防止刚开始刷新页面有空白问题。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">          <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">          <span class="attribute">height</span>: <span class="number">80px</span>;</span><br><span class="line">          <span class="attribute">margin</span>: <span class="number">100px</span> auto;</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line"> <span class="selector-tag">span</span> &#123;</span><br><span class="line">          <span class="attribute">display</span>: block;</span><br><span class="line">          <span class="attribute">float</span>: left;</span><br><span class="line">          <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">          <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">          <span class="attribute">background-color</span>: black;</span><br><span class="line">          <span class="attribute">margin</span>: <span class="number">15px</span> <span class="number">0</span> <span class="number">0</span> <span class="number">10px</span>;</span><br><span class="line">           <span class="attribute">color</span>: <span class="built_in">rgb</span>(<span class="number">247</span>, <span class="number">239</span>, <span class="number">239</span>);</span><br><span class="line">          <span class="attribute">line-height</span>: <span class="number">50px</span>;</span><br><span class="line">          <span class="attribute">text-align</span>: center;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;span class&#x3D;&quot;hour&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">   &lt;span class&#x3D;&quot;minute&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;span class&#x3D;&quot;second&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//1.获取span元素</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> hour=<span class="built_in">document</span>.querySelector(<span class="string">".hour"</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> minute=<span class="built_in">document</span>.querySelector(<span class="string">".minute"</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> second=<span class="built_in">document</span>.querySelector(<span class="string">".second"</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> inputTime=+<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2020-7-8 16:09:00'</span>);<span class="comment">//返回的是当前用户输入时间总的毫秒数</span></span></span><br><span class="line">      </span><br><span class="line"><span class="actionscript">     <span class="comment">//2.开启定时器</span></span></span><br><span class="line"><span class="actionscript">     countDown();<span class="comment">//先调用一次，防止第一次刷新空白</span></span></span><br><span class="line">     </span><br><span class="line">     setInterval(countDown,1000);</span><br><span class="line">     </span><br><span class="line"><span class="actionscript">     <span class="function"><span class="keyword">function</span> <span class="title">countDown</span><span class="params">(time)</span></span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> nowTime=+<span class="keyword">new</span> <span class="built_in">Date</span>();<span class="comment">//返回的是当前时间总的毫秒数</span></span></span><br><span class="line">   </span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> times=(inputTime - nowTime)/<span class="number">1000</span>;<span class="comment">//times是剩余时间总的毫秒数</span></span></span><br><span class="line">    </span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> h = <span class="built_in">parseInt</span>(times / <span class="number">60</span> / <span class="number">60</span> % <span class="number">24</span>);<span class="comment">//时</span></span></span><br><span class="line"><span class="actionscript">    h = h &lt; <span class="number">10</span> ? <span class="string">'0'</span> + h : h;</span></span><br><span class="line"><span class="actionscript">    hour.innerHTML=h;<span class="comment">//将剩余的小时数给小时的黑色盒子</span></span></span><br><span class="line">    </span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> d=<span class="built_in">parseInt</span>(times / <span class="number">60</span> % <span class="number">60</span>);<span class="comment">//分</span></span></span><br><span class="line"><span class="actionscript">    m = m &lt; <span class="number">10</span> ? <span class="string">'0'</span> + m : m;</span></span><br><span class="line">    </span><br><span class="line"><span class="actionscript">    minute.innerHTML=m;<span class="comment">//将剩余的分钟给分钟黑色盒子</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> d=<span class="built_in">parseInt</span>(times % <span class="number">60</span>);<span class="comment">//当前的秒</span></span></span><br><span class="line"><span class="actionscript">    s = s &lt; <span class="number">10</span> ? <span class="string">'0'</span> + s : s;</span></span><br><span class="line"><span class="actionscript">    second.innerHTML=s;<span class="comment">//将剩余秒数给秒数黑色盒子</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -273,7 +271,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://xulibin123.gitee.io/ice-ui/2020/08/17/%E6%8B%96%E5%8A%A8%E6%A8%A1%E6%80%81%E6%A1%86/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://xulibin123.gitee.io/ice-ui/2020/08/20/%E5%80%92%E8%AE%A1%E6%97%B6%E6%95%88%E6%9E%9C/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -287,18 +285,18 @@
   
 <nav id="article-nav">
   
-    <a href="/ice-ui/2020/08/20/%E5%80%92%E8%AE%A1%E6%97%B6%E6%95%88%E6%9E%9C/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/ice-ui/2020/08/21/%E9%97%AD%E5%8C%85/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          倒计时
+          闭包
         
       </div>
     </a>
   
   
-    <a href="/ice-ui/2020/08/17/%E8%B4%AA%E5%90%83%E8%9B%87/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">贪吃蛇</div>
+    <a href="/ice-ui/2020/08/17/%E6%8B%96%E5%8A%A8%E6%A8%A1%E6%80%81%E6%A1%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">拖动模态框</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -325,7 +323,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#拖动模态框"><span class="toc-number">1.</span> <span class="toc-text">拖动模态框</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#案例分析"><span class="toc-number">1.0.1.</span> <span class="toc-text">案例分析</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#倒计时的实现"><span class="toc-number">1.</span> <span class="toc-text">倒计时的实现</span></a></li></ol>
                     </div>
                 </span>
             </div>

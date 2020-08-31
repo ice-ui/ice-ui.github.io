@@ -16,7 +16,7 @@
 <meta property="og:description" content="继承">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-13T07:30:52.169Z">
-<meta property="article:modified_time" content="2020-08-17T01:49:06.752Z">
+<meta property="article:modified_time" content="2020-08-21T01:33:05.159Z">
 <meta property="article:author" content="ice-ui">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
@@ -183,7 +183,22 @@
       
         <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><a id="more"></a>
 
+<h3 id="原型链：实现继承的主要方式"><a href="#原型链：实现继承的主要方式" class="headerlink" title="原型链：实现继承的主要方式"></a>原型链：实现继承的主要方式</h3><blockquote>
+<p>每个构造函数都有一个原型对象，每个原型对象都有一个指向构造函数的指针(constroctor属性)，而实例都包含一个指向该原型对象的内部指针(<code>__proto__</code>属性)。</p>
+</blockquote>
+<p>基本思想：将原型对象等于另一个类型的实例，此时该原型对象就有一个指向另一个原型对象的指针。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个父函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.property = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//给父函数的原型添加方法</span></span><br><span class="line">SuperType.prototype.superValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.property;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//定义子函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//给子函数添加属性</span></span><br><span class="line">    <span class="keyword">this</span>.Subproperty = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//将父函数的实例赋给子函数的原型</span></span><br><span class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</span><br><span class="line"></span><br><span class="line"><span class="comment">//此时SubType.prototype指向SuperType.prototype对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//给子函数的原型添加一个方法</span></span><br><span class="line">SubType.prototype.SubValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.Subproperty;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//给子函数创建instance实例</span></span><br><span class="line"><span class="keyword">var</span> instance = <span class="keyword">new</span> SubType();</span><br><span class="line"></span><br><span class="line"><span class="comment">//通过Instance访问父函数SuperType在原型中定义的方法</span></span><br><span class="line">consolelog(instance.superValue());<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 
+<p>从上面的例子看来，instance指向的是子函数SubType.prototype对象，而子函数SubType.prototype指向父函数的SuperType.prototype对象，（意义在于存在于父函数的所有实例的属性和方法，现在也存在SubType.prototype中了，instance指向SubType.prototype，instance也拥有了SubType的所有属性和方法），形成了一条链的关系。</p>
+<p>而原型链不只如此，所有引用类型默认都继承了Object(所有函数的默认原型都是Object的实例，函数.prototype=new Object())</p>
+<h4 id="综上："><a href="#综上：" class="headerlink" title="综上："></a>综上：</h4><ol>
+<li><h4 id="函数的显示原型指向的对象默认是空的Object实例对象（但是Object不满足，Object-prototype指向null—–-gt-Object的原型对象是原型链的尽头）。"><a href="#函数的显示原型指向的对象默认是空的Object实例对象（但是Object不满足，Object-prototype指向null—–-gt-Object的原型对象是原型链的尽头）。" class="headerlink" title="函数的显示原型指向的对象默认是空的Object实例对象（但是Object不满足，Object.prototype指向null—–&gt;Object的原型对象是原型链的尽头）。"></a>函数的显示原型指向的对象默认是空的Object实例对象（但是Object不满足，Object.prototype指向null—–&gt;Object的原型对象是原型链的尽头）。</h4></li>
+<li><h4 id="所有的函数都是Function的实例（包括Function）"><a href="#所有的函数都是Function的实例（包括Function）" class="headerlink" title="所有的函数都是Function的实例（包括Function）"></a>所有的函数都是Function的实例（包括Function）</h4></li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.property = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">SuperType.prototype.superValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.property;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.Subproperty = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//将父函数的实例赋给子函数的原型</span></span><br><span class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</span><br><span class="line"><span class="comment">//给子函数的原型添加一个方法</span></span><br><span class="line">SubType.prototype.subValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.subproperty;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//重写父函数中superValue方法</span></span><br><span class="line">subType.prototype.superVaule = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> instance = <span class="keyword">new</span> SubType();</span><br><span class="line"><span class="comment">//当通过SubType的实例调用的时候，调用的是重新定义的方法</span></span><br><span class="line"><span class="built_in">console</span>.log(instance.superValue());<span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> SuperType();</span><br><span class="line"><span class="comment">//当通过SuperType的实例调用的时候，调用的是原来的方法</span></span><br><span class="line"><span class="built_in">console</span>.log(instance1.superType());<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：必须在SuperType的实例替换了原型后，才定义这两个方法。</p>
+<h3 id="借用构造函数"><a href="#借用构造函数" class="headerlink" title="借用构造函数"></a>借用构造函数</h3><h3 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h3><h3 id="原型式继承"><a href="#原型式继承" class="headerlink" title="原型式继承"></a>原型式继承</h3><h3 id="寄生式继承"><a href="#寄生式继承" class="headerlink" title="寄生式继承"></a>寄生式继承</h3><h3 id="寄生组合式继承"><a href="#寄生组合式继承" class="headerlink" title="寄生组合式继承"></a>寄生组合式继承</h3>
       
 
       
@@ -304,7 +319,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#继承"><span class="toc-number">1.</span> <span class="toc-text">继承</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#继承"><span class="toc-number">1.</span> <span class="toc-text">继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原型链：实现继承的主要方式"><span class="toc-number">2.</span> <span class="toc-text">原型链：实现继承的主要方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#综上："><span class="toc-number">2.1.</span> <span class="toc-text">综上：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数的显示原型指向的对象默认是空的Object实例对象（但是Object不满足，Object-prototype指向null—–-gt-Object的原型对象是原型链的尽头）。"><span class="toc-number">2.2.</span> <span class="toc-text">函数的显示原型指向的对象默认是空的Object实例对象（但是Object不满足，Object.prototype指向null—–&gt;Object的原型对象是原型链的尽头）。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#所有的函数都是Function的实例（包括Function）"><span class="toc-number">2.3.</span> <span class="toc-text">所有的函数都是Function的实例（包括Function）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#借用构造函数"><span class="toc-number">3.</span> <span class="toc-text">借用构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组合继承"><span class="toc-number">4.</span> <span class="toc-text">组合继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原型式继承"><span class="toc-number">5.</span> <span class="toc-text">原型式继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#寄生式继承"><span class="toc-number">6.</span> <span class="toc-text">寄生式继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#寄生组合式继承"><span class="toc-number">7.</span> <span class="toc-text">寄生组合式继承</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -427,7 +442,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -439,6 +454,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
@@ -447,19 +466,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">prototype</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">prototype</a>
               </li>
             
             <div class="clearfix"></div>
