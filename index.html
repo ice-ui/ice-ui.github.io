@@ -153,6 +153,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-放大镜效果" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/ice-ui/2020/09/09/%E6%94%BE%E5%A4%A7%E9%95%9C%E6%95%88%E6%9E%9C/">放大镜</a>
+    </h1>
+  
+
+        
+        <a href="/ice-ui/2020/09/09/%E6%94%BE%E5%A4%A7%E9%95%9C%E6%95%88%E6%9E%9C/" class="archive-article-date">
+  	<time datetime="2020-09-09T07:29:25.390Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-09</time>
+</a>
+        
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+<h4 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h4><h5 id="实现原理：主要分为几个部分"><a href="#实现原理：主要分为几个部分" class="headerlink" title="实现原理：主要分为几个部分"></a>实现原理：主要分为几个部分</h5><ol>
+<li>页面主要包含三个元素：原始手机图片(mobile)、遮挡层盒子(mask)、放大图片(bigImg)</li>
+<li>当鼠标经过(mouseover)，遮挡层和大图片显示出来，鼠标离开的时候(mouseout)，遮挡层和大图片隐藏起来。</li>
+<li>鼠标移动的时候(mousemove)鼠标的坐标等于鼠标在页面的坐标减去鼠标在盒子的坐标(e.pageX-mobile.offstLeft),将鼠标的坐标赋给遮挡层（注意当mask移动的时候，鼠标定在遮挡层的中央 mask.offsetWidth/2)</li>
+<li>遮挡层的最小范围为0，最大范围为mobile的宽度（高度）-mask的宽度（高度）。</li>
+<li>重点注意的地方：<strong>大图片的移动距离/大图片的最大移动距离=mask的移动距离/mask的最大移动距离（最后的left和top应该为负值，形成镜像原理）</strong></li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">    &lt;style&gt;</span></span><br><span class="line"><span class="regexp">        * &#123;</span></span><br><span class="line"><span class="regexp">            padding: 0;</span></span><br><span class="line"><span class="regexp">            margin: 0;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">         .box &#123;</span></span><br><span class="line"><span class="regexp">            width: 400px;</span></span><br><span class="line"><span class="regexp">            height: 590px;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        </span></span><br><span class="line"><span class="regexp">        .mobile &#123;</span></span><br><span class="line"><span class="regexp">            position: relative;</span></span><br><span class="line"><span class="regexp">            height: 398px;</span></span><br><span class="line"><span class="regexp">            border: 1px solid #ccc;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        </span></span><br><span class="line"><span class="regexp">        .mask &#123;</span></span><br><span class="line"><span class="regexp">            display: none;</span></span><br><span class="line"><span class="regexp">            position: absolute;</span></span><br><span class="line"><span class="regexp">            top: 0;</span></span><br><span class="line"><span class="regexp">            left: 0;</span></span><br><span class="line"><span class="regexp">            width: 300px;</span></span><br><span class="line"><span class="regexp">            height: 300px;</span></span><br><span class="line"><span class="regexp">            background-color: pink;</span></span><br><span class="line"><span class="regexp">            opacity: .5;</span></span><br><span class="line"><span class="regexp">            border: 1px solid #ccc;</span></span><br><span class="line"><span class="regexp">            cursor: move;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        </span></span><br><span class="line"><span class="regexp">        .big &#123;</span></span><br><span class="line"><span class="regexp">            display: none;</span></span><br><span class="line"><span class="regexp">            position: absolute;</span></span><br><span class="line"><span class="regexp">            top: 0;</span></span><br><span class="line"><span class="regexp">            left: 400px;</span></span><br><span class="line"><span class="regexp">            width: 500px;</span></span><br><span class="line"><span class="regexp">            height: 500px;</span></span><br><span class="line"><span class="regexp">            background-color: pink;</span></span><br><span class="line"><span class="regexp">            overflow: hidden;</span></span><br><span class="line"><span class="regexp">            border: 1px solid #ccc;</span></span><br><span class="line"><span class="regexp">            z-index: 999;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        </span></span><br><span class="line"><span class="regexp">        .bigImg &#123;</span></span><br><span class="line"><span class="regexp">            position: absolute;</span></span><br><span class="line"><span class="regexp">            top: 0;</span></span><br><span class="line"><span class="regexp">            left: 0;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>style&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div class="mobile"&gt;</span></span><br><span class="line"><span class="regexp">        &lt;img src="upload/</span>s3.png<span class="string">" alt="</span><span class="string">"&gt;</span></span><br><span class="line"><span class="string">        &lt;div class="</span>mask<span class="string">"&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;div class="</span>big<span class="string">"&gt;</span></span><br><span class="line"><span class="string">            &lt;img src="</span>upload/big.jpg<span class="string">" alt="</span><span class="string">" class='bigImg'&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;script&gt;</span></span><br><span class="line"><span class="string">        //1获取元素</span></span><br><span class="line"><span class="string">        var mobile = document.querySelector('.mobile');</span></span><br><span class="line"><span class="string">        var mask = document.querySelector('.mask');</span></span><br><span class="line"><span class="string">        var big = document.querySelector('.big');</span></span><br><span class="line"><span class="string">        var bigImg = document.querySelector('.bigImg');</span></span><br><span class="line"><span class="string">        //1.鼠标经过mobile图片 mask big显示出来</span></span><br><span class="line"><span class="string">        mobile.addEventListener('mouseover', function() &#123;</span></span><br><span class="line"><span class="string">                mask.style.display = 'block';</span></span><br><span class="line"><span class="string">                big.style.display = 'block';</span></span><br><span class="line"><span class="string">            &#125;)</span></span><br><span class="line"><span class="string">            //2.鼠标离开mobile图片 mask big隐藏出来</span></span><br><span class="line"><span class="string">        mobile.addEventListener('mouseout', function() &#123;</span></span><br><span class="line"><span class="string">                mask.style.display = 'none';</span></span><br><span class="line"><span class="string">                big.style.display = 'none';</span></span><br><span class="line"><span class="string">            &#125;)</span></span><br><span class="line"><span class="string">            //3.当鼠标移动的时候 遮挡层一起移动</span></span><br><span class="line"><span class="string">            //1)获得鼠标在图片中的坐标=鼠标在整个页面的坐标-图片在页面中的坐标</span></span><br><span class="line"><span class="string">        mobile.addEventListener('mousemove', function(e) &#123;</span></span><br><span class="line"><span class="string">            var x = e.pageX - mobile.offsetLeft;</span></span><br><span class="line"><span class="string">            var y = e.pageY - mobile.offsetTop;</span></span><br><span class="line"><span class="string">            //2)mask移动的距离 使鼠标定在遮挡层的中心</span></span><br><span class="line"><span class="string">            var maskX = x - mask.offsetWidth / 2;</span></span><br><span class="line"><span class="string">            var maskY = y - mask.offsetHeight / 2;</span></span><br><span class="line"><span class="string">            //3)遮挡层移动的最大距离 mobile图片的宽度或者高度减去遮挡层的宽度或者高度</span></span><br><span class="line"><span class="string">            //因为这是正方形  就采用一个相同的变量</span></span><br><span class="line"><span class="string">            var maskMax = mobile.offsetWidth - mask.offsetWidth;</span></span><br><span class="line"><span class="string">            //限制遮挡层的移动距离</span></span><br><span class="line"><span class="string">            if (maskX &lt;= 0) &#123;</span></span><br><span class="line"><span class="string">                maskX = 0;</span></span><br><span class="line"><span class="string">            &#125; else if (maskX &gt;= maskMax) &#123;</span></span><br><span class="line"><span class="string">                maskX = maskMax;</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">            if (maskY &lt;= 0) &#123;</span></span><br><span class="line"><span class="string">                maskY = 0;</span></span><br><span class="line"><span class="string">            &#125; else if (maskY &gt;= maskMax) &#123;</span></span><br><span class="line"><span class="string">                maskY = maskMax;</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">            //4)将鼠标的移动距离给mask</span></span><br><span class="line"><span class="string">            mask.style.left = maskX + 'px';</span></span><br><span class="line"><span class="string">            mask.style.top = maskY + 'px';</span></span><br><span class="line"><span class="string">            //4.大图片的移动距离</span></span><br><span class="line"><span class="string">            //1)因为mask的图片尺寸与大图片的尺寸不一样 要使图片显示和大图片在一个位置 采用公式</span></span><br><span class="line"><span class="string">            //大图片的最大移动距离</span></span><br><span class="line"><span class="string">            var bigMax = big.offsetWidth - bigImg.offsetWidth;</span></span><br><span class="line"><span class="string">            //大图片的移动距离/大图片的最大移动距离=遮挡层的移动距离/遮挡层的最大移动距离</span></span><br><span class="line"><span class="string">            var bigX = maskX * bigMax / maskMax;</span></span><br><span class="line"><span class="string">            var bigY = maskY * bigMax / maskMax;</span></span><br><span class="line"><span class="string">            bigImg.style.left = -bigX + 'px';</span></span><br><span class="line"><span class="string">            bigImg.style.top = -bigY + 'px';</span></span><br><span class="line"><span class="string">        &#125;)</span></span><br><span class="line"><span class="string">    &lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/ice-ui/2020/09/09/%E6%94%BE%E5%A4%A7%E9%95%9C%E6%95%88%E6%9E%9C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+  
     <article id="post-闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -174,7 +252,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <a id="more"></a>
+
+<h3 id="什么是闭包？"><a href="#什么是闭包？" class="headerlink" title="什么是闭包？"></a>什么是闭包？</h3><ul>
+<li>嵌套的内部函数</li>
+<li>包含被引用对象的变量</li>
+</ul>
+<p>（闭包是指有权访问另一个函数作用域中的变量的函数，并且在闭包的内部形成一个外部无法访问的局部作用域）</p>
+<h3 id="如何产生闭包？"><a href="#如何产生闭包？" class="headerlink" title="如何产生闭包？"></a>如何产生闭包？</h3><p><strong>当一个嵌套的内部函数引用了嵌套的外部函数的变量或函数时，就产生了闭包</strong></p>
+<h3 id="产生闭包的条件"><a href="#产生闭包的条件" class="headerlink" title="产生闭包的条件"></a>产生闭包的条件</h3><ol>
+<li>函数嵌套</li>
+<li>内部函数引用了内部函数的额数据（变量或者函数）</li>
+<li>执行外部函数（执行函数定义时就会产生闭包）</li>
+</ol>
+<h3 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h3><ol>
+<li>使用函数内部变量在函数执行完后，仍然存活在内存中（延长了局部变量的生命周期）</li>
+<li>让函数外部可以操作到函数内部的数据（变量或者函数）</li>
+</ol>
+<h3 id="闭包的生命周期"><a href="#闭包的生命周期" class="headerlink" title="闭包的生命周期"></a>闭包的生命周期</h3><ol>
+<li>产生：在嵌套的内部函数定义执行完成时就产生了。（不是在调用）</li>
+<li>死亡：在嵌套的内部函数成为垃圾对象时。</li>
+</ol>
+<h3 id="常见的闭包"><a href="#常见的闭包" class="headerlink" title="常见的闭包"></a>常见的闭包</h3><ol>
+<li>将函数作为另一个函数的返回值</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a=<span class="number">2</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        a++;</span><br><span class="line">        <span class="built_in">console</span>.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fn2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f=fn1();</span><br><span class="line">f();</span><br><span class="line">f();</span><br><span class="line"><span class="comment">//产生了一个闭包，f是调用的内部函数</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>将函数作为实参传递给另一个函数调用</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showDelay</span>(<span class="params">msg,time</span>)</span>&#123;</span><br><span class="line">setTimeOut(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(msg);</span><br><span class="line">&#125;,time)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">showDelay(<span class="string">'hello'</span>,<span class="number">2000</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="如何看闭包对象创建了几次？"><a href="#如何看闭包对象创建了几次？" class="headerlink" title="如何看闭包对象创建了几次？"></a>如何看闭包对象创建了几次？</h4><p>外部函数执行了几次闭包就创建了几次</p>
+
       
 
       
@@ -182,6 +292,25 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -860,87 +989,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/ice-ui/2020/08/12/%E6%95%B0%E7%BB%84/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-
-  
-    <article id="post-html5有哪些新特性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/ice-ui/2020/07/18/html5%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B0%E7%89%B9%E6%80%A7/">HTML5新特性</a>
-    </h1>
-  
-
-        
-        <a href="/ice-ui/2020/07/18/html5%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B0%E7%89%B9%E6%80%A7/" class="archive-article-date">
-  	<time datetime="2020-07-18T07:05:39.045Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
-        
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="HTML5新特性"><a href="#HTML5新特性" class="headerlink" title="HTML5新特性"></a>HTML5新特性</h3>
-        
-          <a class="article-more-a" href="/ice-ui/2020/07/18/html5%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B0%E7%89%B9%E6%80%A7/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HTML5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/ice-ui/2020/07/18/html5%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B0%E7%89%B9%E6%80%A7/">展开全文 >></a>
         </p>
       
 
