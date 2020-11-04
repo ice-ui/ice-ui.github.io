@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://gitee.com/xulibin123/ice-ui/raw/master/images/proto.png">
 <meta property="article:published_time" content="2020-08-17T01:39:29.923Z">
-<meta property="article:modified_time" content="2020-08-20T12:46:03.312Z">
+<meta property="article:modified_time" content="2020-10-25T05:45:05.016Z">
 <meta property="article:author" content="ice-ui">
 <meta property="article:tag" content="javascript">
 <meta property="article:tag" content="prototype">
@@ -187,7 +187,7 @@
         <h3 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h3><a id="more"></a>
 
 <ol>
-<li>​    我们创建的每一个函数都有一个原型（<strong>prototype</strong>)属性，这个属性是一个指针，指向一个该函数的原型对象（包含可以由特定类型的所有实例共享的属性和方法）。</li>
+<li>我们创建的每一个函数都有一个原型（<strong>prototype</strong>)属性，这个属性是一个指针，指向一个该函数的原型对象（包含可以由特定类型的所有实例共享的属性和方法）。</li>
 <li>所有的原型对象都会自动获得一个<strong>constructor</strong>属性—–&gt;指向prototype属性所在函数的指针。</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">Person.prototype.name = <span class="string">"Bob"</span>;</span><br><span class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line">person1.sayName( );<span class="comment">//Bob</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.constructor===Person);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
@@ -508,6 +508,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -516,11 +520,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,7 +528,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">prototype</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,7 +540,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Array</a>
+                <a href="javascript:void(0)" class="js-tag color5">prototype</a>
               </li>
              
               <li class="article-tag-list-item">
