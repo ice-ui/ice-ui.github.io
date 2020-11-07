@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://xulibin123.gitee.io/ice-ui">
-  <title>冒泡排序 | Hexo</title>
+  <title>执行上下文 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript实现冒泡排序算法思想：反复扫描待排序记录序列，在扫描的过程中顺次比较相邻的两个元素的大小，若逆序就交换位置。（大的往后移动），第一轮排下来之后，最大的数必然在最末尾，然后进行第二次排序……. 如果在排序过程中没有发现一个逆序，则可直接结束整个过程，所以冒泡最多进行n-1次。 将23,45,2,1,5,67,89,32进行排序？ 先进行第一次排序，将最大的数放在末尾。  12">
+  <meta name="description" content="执行上下文全局执行上下文 在执行全局代码前将window确定为全局执行上下文  对全局数据进行预处理：  var定义的全局变量&#x3D;&#x3D;&#x3D;&gt;undefined,添加为window的属性。 function声明的全局函数&#x3D;&#x3D;&#x3D;&gt;赋值fn，添加为window的方法。 this&#x3D;&#x3D;&gt;赋值window。   开始执行全局代码。（意味着在做上面这些事情时，代码还未执行）   12345678">
 <meta property="og:type" content="article">
-<meta property="og:title" content="冒泡排序">
-<meta property="og:url" content="http://xulibin123.gitee.io/ice-ui/2020/10/31/javascript%E5%AE%9E%E7%8E%B0%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:title" content="执行上下文">
+<meta property="og:url" content="http://xulibin123.gitee.io/ice-ui/2020/11/06/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="javascript实现冒泡排序算法思想：反复扫描待排序记录序列，在扫描的过程中顺次比较相邻的两个元素的大小，若逆序就交换位置。（大的往后移动），第一轮排下来之后，最大的数必然在最末尾，然后进行第二次排序……. 如果在排序过程中没有发现一个逆序，则可直接结束整个过程，所以冒泡最多进行n-1次。 将23,45,2,1,5,67,89,32进行排序？ 先进行第一次排序，将最大的数放在末尾。  12">
+<meta property="og:description" content="执行上下文全局执行上下文 在执行全局代码前将window确定为全局执行上下文  对全局数据进行预处理：  var定义的全局变量&#x3D;&#x3D;&#x3D;&gt;undefined,添加为window的属性。 function声明的全局函数&#x3D;&#x3D;&#x3D;&gt;赋值fn，添加为window的方法。 this&#x3D;&#x3D;&gt;赋值window。   开始执行全局代码。（意味着在做上面这些事情时，代码还未执行）   12345678">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-31T04:28:53.475Z">
-<meta property="article:modified_time" content="2020-10-31T05:09:37.551Z">
+<meta property="article:published_time" content="2020-11-06T13:02:51.263Z">
+<meta property="article:modified_time" content="2020-11-07T01:29:40.300Z">
 <meta property="article:author" content="ice-ui">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -155,20 +156,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-javascript实现冒泡排序" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-执行上下文和执行上下文栈" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      冒泡排序
+      执行上下文
     </h1>
   
 
         
-        <a href="/ice-ui/2020/10/31/javascript%E5%AE%9E%E7%8E%B0%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2020-10-31T04:28:53.475Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-31</time>
+        <a href="/ice-ui/2020/11/06/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/" class="archive-article-date">
+  	<time datetime="2020-11-06T13:02:51.263Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-06</time>
 </a>
         
 
@@ -182,23 +183,62 @@
       
         <a id="more"></a>
 
-<h3 id="javascript实现冒泡排序"><a href="#javascript实现冒泡排序" class="headerlink" title="javascript实现冒泡排序"></a>javascript实现冒泡排序</h3><p>算法思想：反复扫描待排序记录序列，在扫描的过程中顺次比较相邻的两个元素的大小，若逆序就交换位置。（大的往后移动），第一轮排下来之后，最大的数必然在最末尾，然后进行第二次排序…….</p>
-<p>如果在排序过程中没有发现一个逆序，则可直接结束整个过程，<strong><em>所以冒泡最多进行n-1次</em></strong>。</p>
-<h4 id="将23-45-2-1-5-67-89-32进行排序？"><a href="#将23-45-2-1-5-67-89-32进行排序？" class="headerlink" title="将23,45,2,1,5,67,89,32进行排序？"></a>将23,45,2,1,5,67,89,32进行排序？</h4><ol>
-<li>先进行第一次排序，将最大的数放在末尾。</li>
+<h2 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h2><h3 id="全局执行上下文"><a href="#全局执行上下文" class="headerlink" title="全局执行上下文"></a>全局执行上下文</h3><ol>
+<li><p>在执行全局代码前将window确定为全局执行上下文</p>
+</li>
+<li><p>对全局数据进行预处理：</p>
+<ul>
+<li>var定义的全局变量===&gt;undefined,添加为window的属性。</li>
+<li>function声明的全局函数===&gt;赋值fn，添加为window的方法。</li>
+<li>this==&gt;赋值window。</li>
+</ul>
+</li>
+<li><p>开始执行全局代码。（意味着在做上面这些事情时，代码还未执行）</p>
+</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[<span class="number">23</span>,<span class="number">45</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">67</span>,<span class="number">89</span>,<span class="number">32</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; arr.length<span class="number">-1</span>;i++)&#123;</span><br><span class="line">   <span class="comment">//如果前面一个数大于后面的数，那么就交换两个数的位置</span></span><br><span class="line">    <span class="keyword">if</span>(arr[i] &gt; arr[i+<span class="number">1</span>])&#123;</span><br><span class="line">        <span class="keyword">var</span> temp = arr[i];</span><br><span class="line">        arr[i] = arr[i+<span class="number">1</span>];</span><br><span class="line">        arr[i+<span class="number">1</span>] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">// [23, 2, 1, 5, 45, 67, 32, 89]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//全局执行上下文</span></span><br><span class="line"><span class="built_in">console</span>.log(a1);<span class="comment">//window.a1</span></span><br><span class="line">a2();<span class="comment">//window.a2()</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//window</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a1 = <span class="number">3</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a2</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a2()'</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h5 id="通过上面一步，我们可以将最大的数排在最后一个位置，那么我们只需要重复arr-length-1次便可以完成所有的排序。"><a href="#通过上面一步，我们可以将最大的数排在最后一个位置，那么我们只需要重复arr-length-1次便可以完成所有的排序。" class="headerlink" title="通过上面一步，我们可以将最大的数排在最后一个位置，那么我们只需要重复arr.length-1次便可以完成所有的排序。"></a>通过上面一步，我们可以将最大的数排在最后一个位置，那么我们只需要重复arr.length-1次便可以完成所有的排序。</h5><p>我们套一层外层循环，循环arr.length-1次，来试一下。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[<span class="number">23</span>,<span class="number">45</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">67</span>,<span class="number">89</span>,<span class="number">32</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>;j &lt; arr.length<span class="number">-1</span>;j++)&#123;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; arr.length<span class="number">-1</span>;i++)&#123;</span><br><span class="line">   <span class="comment">//如果前面一个数大于后面的数，那么就交换两个数的位置</span></span><br><span class="line">    <span class="keyword">if</span>(arr[i] &gt; arr[i+<span class="number">1</span>])&#123;</span><br><span class="line">        <span class="keyword">var</span> temp = arr[i];</span><br><span class="line">        arr[i] = arr[i+<span class="number">1</span>];</span><br><span class="line">        arr[i+<span class="number">1</span>] = temp;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">// [1, 2, 5, 23, 32, 45, 67, 89]</span></span><br></pre></td></tr></table></figure>
+<h3 id="函数执行上下文"><a href="#函数执行上下文" class="headerlink" title="函数执行上下文"></a>函数执行上下文</h3><p>我们还是以代码来验证</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params">a1</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//在此处我们可以访问：</span></span><br><span class="line">    <span class="built_in">console</span>.log(a1);<span class="comment">//2</span></span><br><span class="line">    <span class="built_in">console</span>.log(a2);<span class="comment">//undefined</span></span><br><span class="line">    a3();<span class="comment">//a3()</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//window</span></span><br><span class="line">    <span class="built_in">console</span>.log(arguements);<span class="comment">//(2,3)(伪数组)</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> a2 = <span class="number">3</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">a3</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'a3()'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用fn</span></span><br><span class="line">fn(<span class="number">2</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
 
-<p>冒泡排序实现了，但是在我们每次循环<strong>i&lt;arr.length-1</strong>的时候，最后一个数我们已经排好了，每次遍历的时候又得排序一次，所以我们可以减少遍历的次数，每次循环不遍历最后一个数，<strong>i&lt;arr.length-1-j</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">23</span>,<span class="number">45</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">67</span>,<span class="number">89</span>,<span class="number">32</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>;j &lt; arr.length<span class="number">-1</span>;j++)&#123;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; arr.length<span class="number">-1</span>-j;i++)&#123;</span><br><span class="line">   <span class="comment">//如果前面一个数大于后面的数，那么就交换两个数的位置</span></span><br><span class="line">    <span class="keyword">if</span>(arr[i] &gt; arr[i+<span class="number">1</span>])&#123;</span><br><span class="line">        <span class="keyword">var</span> temp = arr[i];</span><br><span class="line">        arr[i] = arr[i+<span class="number">1</span>];</span><br><span class="line">        arr[i+<span class="number">1</span>] = temp;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">// [1, 2, 5, 23, 32, 45, 67, 89]</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>在调用函数，准备执行函数体之前，创建对应的函数执行上下文对象。</p>
+</li>
+<li><p>对局部数据进行预处理：</p>
+<ul>
+<li>形参变量==&gt;赋值（实参列表），添加为执行上下文的属性。</li>
+<li>arguments==&gt;赋值（实参列表），添加为执行上下文的属性。</li>
+<li>var定义的全局变量===&gt;undefined,添加为执行上下文的属性。</li>
+<li>function声明的全局函数===&gt;赋值fn，添加为执行上下文的方法。</li>
+<li>this==&gt;赋值（调用函数的对象）</li>
+</ul>
+</li>
+<li><p>开始执行函数体代码。</p>
+</li>
+</ol>
+<h2 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">               				<span class="comment">//1.进入全局执行上下文</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> bar = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">5</span>;</span><br><span class="line">    foo(x + b);				<span class="comment">//3.进入foo函数执行上下文</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params">y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> c = <span class="number">5</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a + c +y);</span><br><span class="line">&#125;</span><br><span class="line">bar(<span class="number">10</span>);					<span class="comment">//2.进入bar函数执行上下文</span></span><br></pre></td></tr></table></figure>
 
-<p>但是在我们上面写的可知：<strong>如果在排序过程中没有发现一个逆序，就可以结束整个过程</strong>。</p>
-<p>如果我们的数据为：[2,3,5,4];</p>
-<p>我们只需要排序一次就可以完成整个排序过程，上面的代码在排序完成后会一直遍历到最后一步，很多余。所以我们可以设置一个标志位，如果在某次循环过程中没有任何数交换，那么我们就结束整个过程。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">23</span>,<span class="number">45</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">67</span>,<span class="number">89</span>,<span class="number">32</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">exchange</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>;j &lt; arr.length<span class="number">-1</span>;j++)&#123;</span><br><span class="line">          <span class="keyword">var</span> o = <span class="literal">true</span>;</span><br><span class="line">   		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; arr.length<span class="number">-1</span>-j;i++)&#123;</span><br><span class="line">        	<span class="keyword">if</span>(arr[i] &gt; arr[i+<span class="number">1</span>])&#123;</span><br><span class="line">       		 <span class="keyword">var</span> temp = arr[i];</span><br><span class="line">        	 arr[i] = arr[i+<span class="number">1</span>];</span><br><span class="line">       		 arr[i+<span class="number">1</span>] = temp;</span><br><span class="line">                o = <span class="literal">false</span>;</span><br><span class="line">    	&#125; </span><br><span class="line">	&#125;</span><br><span class="line">		<span class="keyword">if</span>(o)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+<p>上面代码产生了三个执行上下文:<strong>n+1</strong>(   1:window;   n:调用函数的次数)</p>
+<ol>
+<li>在全局代码执行前，js引擎就会创建一个栈（<strong>后进先出原则</strong>）来存储管理所有的执行上下文对象。</li>
+<li>在全局执行上下文(window)确定后，将其添加到栈中（压栈）。</li>
+<li>在函数执行上下文创建后，将其添加到栈中（压栈）。</li>
+<li>在当前函数执行完后，将栈顶的对象移除（出栈）。</li>
+<li>当所有代码执行完后，栈中只剩下window（总是在底部）。</li>
+</ol>
+<h4 id="下面以具体的例子来验证"><a href="#下面以具体的例子来验证" class="headerlink" title="下面以具体的例子来验证"></a>下面以具体的例子来验证</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'gb: '</span>+ i);<span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">1</span>;</span><br><span class="line">foo(<span class="number">1</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i == <span class="number">4</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span>;<span class="comment">//递归调用的终止条件</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'fb:'</span> + i);</span><br><span class="line">    foo(i + <span class="number">1</span>);<span class="comment">//递归调用：在函数内部调用自己</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'fe'</span> + i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'ge:'</span> + i);</span><br></pre></td></tr></table></figure>
+
+<p>依次执行结果：</p>
+<p>gb: undefined</p>
+<p>fb: 1</p>
+<p>fb: 2</p>
+<p>fb: 3</p>
+<p>fe: 3</p>
+<p>fe: 2</p>
+<p>fe: 1</p>
+<p>ge: 1</p>
+<p>整个过程中产生了5个执行上下文对象(window + 调用了四次函数)</p>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a); <span class="comment">//'function'</span></span><br><span class="line">					   <span class="comment">//先执行变量提升，再执行函数提升</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//2.</span></span><br><span class="line"><span class="keyword">if</span>(!(b <span class="keyword">in</span> <span class="built_in">window</span>))&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(b);			<span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//3.</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(c);</span><br><span class="line">&#125;</span><br><span class="line">c(<span class="number">2</span>);					<span class="comment">//报错</span></span><br><span class="line"><span class="comment">//这个代码的相当于这样执行</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(c);</span><br><span class="line">&#125;</span><br><span class="line">c = <span class="number">1</span>;</span><br><span class="line">c(<span class="number">2</span>);<span class="comment">//c不是函数了</span></span><br></pre></td></tr></table></figure>
 
 
       
@@ -208,6 +248,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -258,7 +309,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://xulibin123.gitee.io/ice-ui/2020/10/31/javascript%E5%AE%9E%E7%8E%B0%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://xulibin123.gitee.io/ice-ui/2020/11/06/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -272,18 +323,9 @@
   
 <nav id="article-nav">
   
-    <a href="/ice-ui/2020/11/06/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          执行上下文
-        
-      </div>
-    </a>
   
-  
-    <a href="/ice-ui/2020/10/29/js%E5%AE%9E%E7%8E%B0map/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js实现map</div>
+    <a href="/ice-ui/2020/10/31/javascript%E5%AE%9E%E7%8E%B0%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">冒泡排序</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -310,7 +352,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript实现冒泡排序"><span class="toc-number">1.</span> <span class="toc-text">javascript实现冒泡排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#将23-45-2-1-5-67-89-32进行排序？"><span class="toc-number">1.1.</span> <span class="toc-text">将23,45,2,1,5,67,89,32进行排序？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#通过上面一步，我们可以将最大的数排在最后一个位置，那么我们只需要重复arr-length-1次便可以完成所有的排序。"><span class="toc-number">1.1.1.</span> <span class="toc-text">通过上面一步，我们可以将最大的数排在最后一个位置，那么我们只需要重复arr.length-1次便可以完成所有的排序。</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#执行上下文"><span class="toc-number">1.</span> <span class="toc-text">执行上下文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#全局执行上下文"><span class="toc-number">1.1.</span> <span class="toc-text">全局执行上下文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数执行上下文"><span class="toc-number">1.2.</span> <span class="toc-text">函数执行上下文</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行上下文栈"><span class="toc-number">2.</span> <span class="toc-text">执行上下文栈</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#下面以具体的例子来验证"><span class="toc-number">2.0.1.</span> <span class="toc-text">下面以具体的例子来验证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试"><span class="toc-number">2.0.2.</span> <span class="toc-text">测试</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>

@@ -153,6 +153,143 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-执行上下文和执行上下文栈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/ice-ui/2020/11/06/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/">执行上下文</a>
+    </h1>
+  
+
+        
+        <a href="/ice-ui/2020/11/06/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/" class="archive-article-date">
+  	<time datetime="2020-11-06T13:02:51.263Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-06</time>
+</a>
+        
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+<h2 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h2><h3 id="全局执行上下文"><a href="#全局执行上下文" class="headerlink" title="全局执行上下文"></a>全局执行上下文</h3><ol>
+<li><p>在执行全局代码前将window确定为全局执行上下文</p>
+</li>
+<li><p>对全局数据进行预处理：</p>
+<ul>
+<li>var定义的全局变量===&gt;undefined,添加为window的属性。</li>
+<li>function声明的全局函数===&gt;赋值fn，添加为window的方法。</li>
+<li>this==&gt;赋值window。</li>
+</ul>
+</li>
+<li><p>开始执行全局代码。（意味着在做上面这些事情时，代码还未执行）</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//全局执行上下文</span></span><br><span class="line"><span class="built_in">console</span>.log(a1);<span class="comment">//window.a1</span></span><br><span class="line">a2();<span class="comment">//window.a2()</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//window</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a1 = <span class="number">3</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a2</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a2()'</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数执行上下文"><a href="#函数执行上下文" class="headerlink" title="函数执行上下文"></a>函数执行上下文</h3><p>我们还是以代码来验证</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params">a1</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//在此处我们可以访问：</span></span><br><span class="line">    <span class="built_in">console</span>.log(a1);<span class="comment">//2</span></span><br><span class="line">    <span class="built_in">console</span>.log(a2);<span class="comment">//undefined</span></span><br><span class="line">    a3();<span class="comment">//a3()</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//window</span></span><br><span class="line">    <span class="built_in">console</span>.log(arguements);<span class="comment">//(2,3)(伪数组)</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> a2 = <span class="number">3</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">a3</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'a3()'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用fn</span></span><br><span class="line">fn(<span class="number">2</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>在调用函数，准备执行函数体之前，创建对应的函数执行上下文对象。</p>
+</li>
+<li><p>对局部数据进行预处理：</p>
+<ul>
+<li>形参变量==&gt;赋值（实参列表），添加为执行上下文的属性。</li>
+<li>arguments==&gt;赋值（实参列表），添加为执行上下文的属性。</li>
+<li>var定义的全局变量===&gt;undefined,添加为执行上下文的属性。</li>
+<li>function声明的全局函数===&gt;赋值fn，添加为执行上下文的方法。</li>
+<li>this==&gt;赋值（调用函数的对象）</li>
+</ul>
+</li>
+<li><p>开始执行函数体代码。</p>
+</li>
+</ol>
+<h2 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">               				<span class="comment">//1.进入全局执行上下文</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> bar = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">5</span>;</span><br><span class="line">    foo(x + b);				<span class="comment">//3.进入foo函数执行上下文</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params">y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> c = <span class="number">5</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a + c +y);</span><br><span class="line">&#125;</span><br><span class="line">bar(<span class="number">10</span>);					<span class="comment">//2.进入bar函数执行上下文</span></span><br></pre></td></tr></table></figure>
+
+<p>上面代码产生了三个执行上下文:<strong>n+1</strong>(   1:window;   n:调用函数的次数)</p>
+<ol>
+<li>在全局代码执行前，js引擎就会创建一个栈（<strong>后进先出原则</strong>）来存储管理所有的执行上下文对象。</li>
+<li>在全局执行上下文(window)确定后，将其添加到栈中（压栈）。</li>
+<li>在函数执行上下文创建后，将其添加到栈中（压栈）。</li>
+<li>在当前函数执行完后，将栈顶的对象移除（出栈）。</li>
+<li>当所有代码执行完后，栈中只剩下window（总是在底部）。</li>
+</ol>
+<h4 id="下面以具体的例子来验证"><a href="#下面以具体的例子来验证" class="headerlink" title="下面以具体的例子来验证"></a>下面以具体的例子来验证</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'gb: '</span>+ i);<span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">1</span>;</span><br><span class="line">foo(<span class="number">1</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i == <span class="number">4</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span>;<span class="comment">//递归调用的终止条件</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'fb:'</span> + i);</span><br><span class="line">    foo(i + <span class="number">1</span>);<span class="comment">//递归调用：在函数内部调用自己</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'fe'</span> + i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'ge:'</span> + i);</span><br></pre></td></tr></table></figure>
+
+<p>依次执行结果：</p>
+<p>gb: undefined</p>
+<p>fb: 1</p>
+<p>fb: 2</p>
+<p>fb: 3</p>
+<p>fe: 3</p>
+<p>fe: 2</p>
+<p>fe: 1</p>
+<p>ge: 1</p>
+<p>整个过程中产生了5个执行上下文对象(window + 调用了四次函数)</p>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a); <span class="comment">//'function'</span></span><br><span class="line">					   <span class="comment">//先执行变量提升，再执行函数提升</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//2.</span></span><br><span class="line"><span class="keyword">if</span>(!(b <span class="keyword">in</span> <span class="built_in">window</span>))&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(b);			<span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//3.</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(c);</span><br><span class="line">&#125;</span><br><span class="line">c(<span class="number">2</span>);					<span class="comment">//报错</span></span><br><span class="line"><span class="comment">//这个代码的相当于这样执行</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(c);</span><br><span class="line">&#125;</span><br><span class="line">c = <span class="number">1</span>;</span><br><span class="line">c(<span class="number">2</span>);<span class="comment">//c不是函数了</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/ice-ui/2020/11/06/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+  
     <article id="post-javascript实现冒泡排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -467,7 +604,7 @@
 <li><p>安装：<code>npm install webpack -g</code>(全局安装)</p>
 </li>
 <li><p>基本文件搭建</p>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack1.png" alt></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack1.png" alt></p>
 </li>
 </ol>
 <ul>
@@ -484,14 +621,14 @@
 </blockquote>
 </li>
 </ol>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack2.png" alt="image-20201016145757326"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack2.png" alt="image-20201016145757326"></p>
 <p>执行命令后出现<strong>package.json</strong>文件—–&gt;当前项目的信息</p>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack3.png" alt="image-20201016145907943"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack3.png" alt="image-20201016145907943"></p>
 <p>完成后，直接执行<strong>webpack</strong>命令就可以打包。</p>
 <p>但是在开发中，一般使用<strong>npm run build</strong>进行打包</p>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack4.png" alt="image-20201016150655832"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack4.png" alt="image-20201016150655832"></p>
 <p>使用方法：将webpack指令与npm run build映射起来</p>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack5.png" alt="image-20201016151125950"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack5.png" alt="image-20201016151125950"></p>
 <h3 id="loader的概念"><a href="#loader的概念" class="headerlink" title="loader的概念"></a>loader的概念</h3><p>在开发中不仅仅有基本的js代码处理，我们也需要加载css、图片、也包括一些高级的讲ES6转成ES5代码，对于webpack本身的能力来说这些转化是不支持的。给webpack扩展对应的loader就可以了。</p>
 <h4 id="loader使用过程"><a href="#loader使用过程" class="headerlink" title="loader使用过程"></a>loader使用过程</h4><ol>
 <li><p>通过npm安装需要使用的loader（不同的文件处理需要不同的loader)</p>
@@ -501,13 +638,13 @@
 </ol>
 <p>安装：<code>npm install --save-dev css-loader</code>（开发时依赖）和<code>npm install style-loader --save-dev</code></p>
 <p>配置：（按照官方步骤）</p>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack6.png" alt="image-20201016180816194"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack6.png" alt="image-20201016180816194"></p>
 <p> 注意：css-loader只负责进行加载，不负责解析</p>
 <p>style-loader将模块进行导出作为样式添加到DOM中</p>
 <h4 id="less文件处理"><a href="#less文件处理" class="headerlink" title="less文件处理"></a>less文件处理</h4><p>测试一个less文件，里面写入less代码(special.less)</p>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack7.png" alt="image-20201016182316821"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack7.png" alt="image-20201016182316821"></p>
 <p>main.js中对special.less文件进行依赖</p>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack8.png" alt="image-20201016182506272"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack8.png" alt="image-20201016182506272"></p>
 <p>当执行<strong>npm run bulid</strong>的时候，将进入<strong>package.json</strong>里面找到相应的映射(webpack)，然后在<strong>webpack.config.js</strong>文件找到入口(main.js)，找到所有的依赖，对他进行编译打包。</p>
 <ol>
 <li><p>安装：<code>npm install --save-dev less-loader less</code> </p>
@@ -521,22 +658,22 @@
 <li>安装：<code>npm install --save-dev url-loader</code></li>
 <li>配置</li>
 </ol>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack9.png" alt="image-20201016193121110"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack9.png" alt="image-20201016193121110"></p>
 <p>图片大小问题：当加载的图片小于limit时，会将图片编译成base64字符串形式；大于limit时，下载file-loader模块进行加载。</p>
 <p><code>npm install file-loader --save-dev</code></p>
 <p>再次打包，会发现dist文件夹里面多了一个图片文件（哈希值）—&gt;哈希值的目的是为了不重复。</p>
 <p>但是，图片并没有显示出来，这是因为图片路径不正确</p>
 <p>在webpack.config.js文件里面加上<strong>publicPath:’dist/‘</strong>为了在我们的url前面加上对应的路径。</p>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack10.png" alt="image-20201016194649960"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack10.png" alt="image-20201016194649960"></p>
 <h5 id="在真实开发中，对打包的图片名字有一定的要求"><a href="#在真实开发中，对打包的图片名字有一定的要求" class="headerlink" title="在真实开发中，对打包的图片名字有一定的要求"></a>在真实开发中，对打包的图片名字有一定的要求</h5><p>在webpack.config.js文件里面进行options的配置</p>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack11.png" alt="image-20201016195819193"></p>
-<p>设置后图片名称：<br><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack12.png" alt="image-20201016195902332"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack11.png" alt="image-20201016195819193"></p>
+<p>设置后图片名称：<br><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack12.png" alt="image-20201016195902332"></p>
 <h4 id="ES6语法处理"><a href="#ES6语法处理" class="headerlink" title="ES6语法处理"></a>ES6语法处理</h4><p>将ES6语法转换成ES5,需要使用babel。</p>
 <ol>
 <li>安装<code>npm install --save-dev babel-loader@7 babel-core babel-preset-es2015</code></li>
 <li>配置</li>
 </ol>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack13.png" alt="image-20201016203738667"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack13.png" alt="image-20201016203738667"></p>
 <ol start="3">
 <li>打包（bundle.js里面的代码全部变成了es5相关的代码）</li>
 </ol>
@@ -554,7 +691,7 @@
 </ul>
 </li>
 <li><p>修改webpack.config.js配置</p>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack14.png" alt="image-20201017084435020"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack14.png" alt="image-20201017084435020"></p>
 </li>
 </ol>
 <h3 id="plugin（插件"><a href="#plugin（插件" class="headerlink" title="plugin（插件)"></a>plugin（插件)</h3><ol>
@@ -586,8 +723,8 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack15.png" alt="image-20201017094931803"></p>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack16.png" alt="image-20201017095043516"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack15.png" alt></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack16.png" alt></p>
 <p>重新打包后，bundle.js文件首部会出现该文字内容。</p>
 <h4 id="2-打包html的plugin"><a href="#2-打包html的plugin" class="headerlink" title="2. 打包html的plugin"></a><em>2. 打包html的plugin</em></h4><p>因为我们的<strong>index.html</strong>存在于我们的根目录下，在真是发布项目的时候，发布的是dist文件夹下面的内容，但是dist文件夹下面没有index.html文件。所以需要把index.html文件打包到bundle文件夹中。</p>
 <h5 id="需要的插件：HtmlWebpackPlugin"><a href="#需要的插件：HtmlWebpackPlugin" class="headerlink" title="需要的插件：HtmlWebpackPlugin"></a>需要的插件：HtmlWebpackPlugin</h5><ul>
@@ -600,9 +737,9 @@
 <li><p>修改webpack.config.js文件</p>
 <ul>
 <li>导入HtmlWebpackPlugin文件</li>
-<li><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack17.png" alt="image-20201017095937090"></li>
 </ul>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack18.png" alt="image-20201017095834093"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack17.png" alt></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack18.png" alt></p>
 </li>
 </ol>
 <p>这里的template表示依据什么模板来生成index.html,</p>
@@ -612,10 +749,10 @@
 <li>安装：<code>npm install webpack-dev-server --save-dev</code>(注意版本)</li>
 <li>安装完后不会立即生效，修改对应的配置(webapck.config.js)</li>
 </ol>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack19.png" alt="image-20201017101309751"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack19.png" alt="image-20201017101309751"></p>
 <ol start="3">
 <li><p>在package.json里面配置脚本:</p>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack20.png" alt="image-20201017102038969"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack20.png" alt></p>
 </li>
 <li><p>执行<strong>npm run dev</strong>即可</p>
 </li>
@@ -631,15 +768,15 @@
 <li><p>安装<code>npm install webpack-merge --save-dev</code>（帮助对两个配置文件进行合并）</p>
 </li>
 </ol>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack21.png" alt="image-20201017103548941"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack21.png" alt></p>
 <ol start="3">
 <li>在脚本指定需要哪个配置文件（原来的webpack.config.js文件可以删除）</li>
 </ol>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack22.png" alt="image-20201017103907879"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack22.png" alt></p>
 <ol start="4">
 <li>执行npm run build—&gt;此时会发现打包文件存放在build文件夹下面—–&gt;修改出口路径(output—&gt;path)</li>
 </ol>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack/webpack23.png" alt="image-20201017104155053"></p>
+<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack23.png" alt="image-20201017104155053"></p>
 
       
 
@@ -1200,95 +1337,6 @@
 
 
   
-    <article id="post-拖动模态框" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/ice-ui/2020/08/17/%E6%8B%96%E5%8A%A8%E6%A8%A1%E6%80%81%E6%A1%86/">拖动模态框</a>
-    </h1>
-  
-
-        
-        <a href="/ice-ui/2020/08/17/%E6%8B%96%E5%8A%A8%E6%A8%A1%E6%80%81%E6%A1%86/" class="archive-article-date">
-  	<time datetime="2020-08-17T02:51:01.448Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
-</a>
-        
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="拖动模态框"><a href="#拖动模态框" class="headerlink" title="拖动模态框"></a>拖动模态框</h2>
-        
-          <a class="article-more-a" href="/ice-ui/2020/08/17/%E6%8B%96%E5%8A%A8%E6%A8%A1%E6%80%81%E6%A1%86/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/ice-ui/2020/08/17/%E6%8B%96%E5%8A%A8%E6%A8%A1%E6%80%81%E6%A1%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/ice-ui/page/2/">2</a><a class="page-number" href="/ice-ui/page/3/">3</a><a class="extend next" rel="next" href="/ice-ui/page/2/">Next &amp;raquo;</a>
@@ -1393,15 +1441,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
               </li>
              
               <li class="article-tag-list-item">
