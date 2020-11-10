@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://xulibin123.gitee.io/ice-ui">
   <title>webpack基本知识总结 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="webpack:静态模块打包工具模块： ES6之前，想要进行模块化开发，必须借助其他的工具，进行模块化开发。 并且在经过模块化开发完成项目后，还需要处理模块间的各种依赖关系，并且将其进行整合打包。 其中一个核心就是让我们可能进行模块化开发，并且会帮助我们处理模块间的依赖关系。 不仅仅是javascript，我们的css、图片、json文件等等在webpack中都可以被当成模块来使用。  打包：">
+  <meta name="description" content="webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack基本知识总结">
 <meta property="og:url" content="http://xulibin123.gitee.io/ice-ui/2020/10/16/webpack/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="webpack:静态模块打包工具模块： ES6之前，想要进行模块化开发，必须借助其他的工具，进行模块化开发。 并且在经过模块化开发完成项目后，还需要处理模块间的各种依赖关系，并且将其进行整合打包。 其中一个核心就是让我们可能进行模块化开发，并且会帮助我们处理模块间的依赖关系。 不仅仅是javascript，我们的css、图片、json文件等等在webpack中都可以被当成模块来使用。  打包：">
+<meta property="og:description" content="webpack">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack1.png">
 <meta property="og:image" content="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack2.png">
@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack22.png">
 <meta property="og:image" content="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack23.png">
 <meta property="article:published_time" content="2020-10-16T05:00:13.001Z">
-<meta property="article:modified_time" content="2020-11-07T01:35:48.971Z">
+<meta property="article:modified_time" content="2020-11-07T01:44:45.309Z">
 <meta property="article:author" content="ice-ui">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack1.png">
@@ -204,7 +204,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <h3 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h3><a id="more"></a>
 
 <h4 id="webpack-静态模块打包工具"><a href="#webpack-静态模块打包工具" class="headerlink" title="webpack:静态模块打包工具"></a>webpack:静态模块打包工具</h4><h4 id="模块："><a href="#模块：" class="headerlink" title="模块："></a>模块：</h4><ol>
 <li>ES6之前，想要进行模块化开发，必须借助其他的工具，进行模块化开发。</li>
@@ -373,10 +373,10 @@
 <ul>
 <li>导入HtmlWebpackPlugin文件</li>
 </ul>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack17.png" alt></p>
-<p><img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack18.png" alt></p>
 </li>
 </ol>
+<p>  <img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack17.png" alt></p>
+<p>   <img src="https://gitee.com/xulibin123/ice-ui/raw/master/images/webpack18.png" alt></p>
 <p>这里的template表示依据什么模板来生成index.html,</p>
 <p>另外需要删除之前在output中添加的publicPath属性，否则插入的script标签中的src可能会有问题。</p>
 <h4 id="webpack-dev-server搭建本地服务器"><a href="#webpack-dev-server搭建本地服务器" class="headerlink" title="webpack-dev-server搭建本地服务器"></a>webpack-dev-server搭建本地服务器</h4><p>webpack提供了一个可选的本地开发服务器，基于node.js搭建。可以实现让浏览器自动刷新显示修改后的结果。</p>
@@ -522,7 +522,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack-静态模块打包工具"><span class="toc-number">1.</span> <span class="toc-text">webpack:静态模块打包工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模块："><span class="toc-number">2.</span> <span class="toc-text">模块：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#打包："><span class="toc-number">3.</span> <span class="toc-text">打包：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack和grunt-gulp的对比"><span class="toc-number"></span> <span class="toc-text">webpack和grunt&#x2F;gulp的对比</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#总结："><span class="toc-number">0.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack的基本使用"><span class="toc-number"></span> <span class="toc-text">webpack的基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loader的概念"><span class="toc-number"></span> <span class="toc-text">loader的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#loader使用过程"><span class="toc-number">1.</span> <span class="toc-text">loader使用过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#css文件处理"><span class="toc-number">2.</span> <span class="toc-text">css文件处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#less文件处理"><span class="toc-number">3.</span> <span class="toc-text">less文件处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图片文件的处理"><span class="toc-number">4.</span> <span class="toc-text">图片文件的处理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#在真实开发中，对打包的图片名字有一定的要求"><span class="toc-number">4.1.</span> <span class="toc-text">在真实开发中，对打包的图片名字有一定的要求</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ES6语法处理"><span class="toc-number">5.</span> <span class="toc-text">ES6语法处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack配置vue"><span class="toc-number"></span> <span class="toc-text">webpack配置vue</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vue文件封装处理"><span class="toc-number">1.</span> <span class="toc-text">.vue文件封装处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#plugin（插件"><span class="toc-number"></span> <span class="toc-text">plugin（插件)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#plugin使用"><span class="toc-number">0.1.</span> <span class="toc-text">plugin使用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-为打包的文件加上版权声明："><span class="toc-number">0.2.</span> <span class="toc-text">1.为打包的文件加上版权声明：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-打包html的plugin"><span class="toc-number">1.</span> <span class="toc-text">2. 打包html的plugin</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#需要的插件：HtmlWebpackPlugin"><span class="toc-number">1.1.</span> <span class="toc-text">需要的插件：HtmlWebpackPlugin</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack-dev-server搭建本地服务器"><span class="toc-number">2.</span> <span class="toc-text">webpack-dev-server搭建本地服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置文件的分离"><span class="toc-number">3.</span> <span class="toc-text">配置文件的分离</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack"><span class="toc-number">1.</span> <span class="toc-text">webpack</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack-静态模块打包工具"><span class="toc-number">1.1.</span> <span class="toc-text">webpack:静态模块打包工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模块："><span class="toc-number">1.2.</span> <span class="toc-text">模块：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#打包："><span class="toc-number">1.3.</span> <span class="toc-text">打包：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack和grunt-gulp的对比"><span class="toc-number">2.</span> <span class="toc-text">webpack和grunt&#x2F;gulp的对比</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#总结："><span class="toc-number">2.0.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack的基本使用"><span class="toc-number">3.</span> <span class="toc-text">webpack的基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loader的概念"><span class="toc-number">4.</span> <span class="toc-text">loader的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#loader使用过程"><span class="toc-number">4.1.</span> <span class="toc-text">loader使用过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#css文件处理"><span class="toc-number">4.2.</span> <span class="toc-text">css文件处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#less文件处理"><span class="toc-number">4.3.</span> <span class="toc-text">less文件处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图片文件的处理"><span class="toc-number">4.4.</span> <span class="toc-text">图片文件的处理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#在真实开发中，对打包的图片名字有一定的要求"><span class="toc-number">4.4.1.</span> <span class="toc-text">在真实开发中，对打包的图片名字有一定的要求</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ES6语法处理"><span class="toc-number">4.5.</span> <span class="toc-text">ES6语法处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack配置vue"><span class="toc-number">5.</span> <span class="toc-text">webpack配置vue</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vue文件封装处理"><span class="toc-number">5.1.</span> <span class="toc-text">.vue文件封装处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#plugin（插件"><span class="toc-number">6.</span> <span class="toc-text">plugin（插件)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#plugin使用"><span class="toc-number">6.0.1.</span> <span class="toc-text">plugin使用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-为打包的文件加上版权声明："><span class="toc-number">6.0.2.</span> <span class="toc-text">1.为打包的文件加上版权声明：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-打包html的plugin"><span class="toc-number">6.1.</span> <span class="toc-text">2. 打包html的plugin</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#需要的插件：HtmlWebpackPlugin"><span class="toc-number">6.1.1.</span> <span class="toc-text">需要的插件：HtmlWebpackPlugin</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack-dev-server搭建本地服务器"><span class="toc-number">6.2.</span> <span class="toc-text">webpack-dev-server搭建本地服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置文件的分离"><span class="toc-number">6.3.</span> <span class="toc-text">配置文件的分离</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -665,7 +665,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color5">prototype</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -677,7 +677,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">prototype</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
