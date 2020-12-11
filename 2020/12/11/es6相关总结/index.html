@@ -6,36 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://xulibin123.gitee.io/ice-ui">
-  <title>高度塌陷问题 | Hexo</title>
+  <title>ES6 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浮动典型问题">
+  <meta name="description" content="es6相关语法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="高度塌陷问题">
-<meta property="og:url" content="http://xulibin123.gitee.io/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/index.html">
+<meta property="og:title" content="ES6">
+<meta property="og:url" content="http://xulibin123.gitee.io/ice-ui/2020/12/11/es6%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="浮动典型问题">
+<meta property="og:description" content="es6相关语法">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://xulibin123.gitee.io/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008194410877.png">
-<meta property="og:image" content="http://xulibin123.gitee.io/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008194545717.png">
-<meta property="og:image" content="http://xulibin123.gitee.io/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008195202084.png">
-<meta property="og:image" content="http://xulibin123.gitee.io/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008195416213.png">
-<meta property="og:image" content="http://xulibin123.gitee.io/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008195727427.png">
-<meta property="og:image" content="http://xulibin123.gitee.io/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008200130219.png">
-<meta property="og:image" content="http://xulibin123.gitee.io/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008200248556.png">
-<meta property="og:image" content="http://xulibin123.gitee.io/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008200359038.png">
-<meta property="og:image" content="http://xulibin123.gitee.io/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008200758027.png">
-<meta property="og:image" content="http://xulibin123.gitee.io/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008201255014.png">
-<meta property="og:image" content="http://xulibin123.gitee.io/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008201825155.png">
-<meta property="og:image" content="http://xulibin123.gitee.io/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008202346120.png">
-<meta property="og:image" content="http://xulibin123.gitee.io/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008202635784.png">
-<meta property="og:image" content="http://xulibin123.gitee.io/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008202805696.png">
-<meta property="article:published_time" content="2020-10-08T11:33:26.583Z">
-<meta property="article:modified_time" content="2020-11-07T01:47:24.951Z">
+<meta property="article:published_time" content="2020-12-11T13:27:05.474Z">
+<meta property="article:modified_time" content="2020-12-11T13:30:54.124Z">
 <meta property="article:author" content="ice-ui">
-<meta property="article:tag" content="css">
-<meta property="article:tag" content="html">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://xulibin123.gitee.io/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008194410877.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -172,20 +155,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-高度塌陷与BFC" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-es6相关总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      高度塌陷问题
+      ES6
     </h1>
   
 
         
-        <a href="/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/" class="archive-article-date">
-  	<time datetime="2020-10-08T11:33:26.583Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-08</time>
+        <a href="/ice-ui/2020/12/11/es6%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2020-12-11T13:27:05.474Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-11</time>
 </a>
         
 
@@ -197,72 +180,278 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="浮动典型问题"><a href="#浮动典型问题" class="headerlink" title="浮动典型问题"></a>浮动典型问题</h3><a id="more"></a>
+        <h3 id="es6相关语法"><a href="#es6相关语法" class="headerlink" title="es6相关语法"></a>es6相关语法</h3><a id="more"></a>
 
-<h4 id="高度塌陷问题："><a href="#高度塌陷问题：" class="headerlink" title="高度塌陷问题："></a>高度塌陷问题：</h4><blockquote>
-<p>在浮动布局中，父元素的高度默认是被子元素撑开的，当子元素浮动后会完全脱离文档流，子元素从文档流脱离后，将会无法撑起父元素的高度，导致父元素高度丢失，下面的元素会自动上移，导致布局混乱。</p>
-</blockquote>
-<p>一般情况下，父元素的高度不给定（因为一旦给定了，内容大小便固定了，往往希望父元素根据内容的多少来动态变化）</p>
-<p><img src="/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008194410877.png" alt="image-20201008194410877"></p>
-<p>当我们给子元素inner设置浮动后，.outer高度没有了—–&gt;高度塌陷<img src="/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008194545717.png" alt="image-20201008194545717"></p>
-<p>父元素高度消失后，其下的元素会自动上移—–&gt;.inner设置浮动后，脱离文档流</p>
-<h3 id="解决高度塌陷问题"><a href="#解决高度塌陷问题" class="headerlink" title="解决高度塌陷问题"></a>解决高度塌陷问题</h3><h4 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h4><ol>
-<li><strong>Block Formatting Context</strong>:块级格式化环境</li>
-<li>该属性为css中隐藏的属性—–&gt;开启BFC该元素会变成一个独立的布局区域。</li>
-<li>开启BFC元素具有的特点：<ul>
-<li>不会被浮动元素所覆盖</li>
-<li>子元素和父元素外边距不会重叠</li>
-<li>可以包含浮动的子元素（解决高度塌陷问题）</li>
+<h2 id="面向过程和面向对象的区别："><a href="#面向过程和面向对象的区别：" class="headerlink" title="面向过程和面向对象的区别："></a>面向过程和面向对象的区别：</h2><ul>
+<li><p>面向过程：就是分析出解决问题所需要的步骤，然后用函数把这些过程一一实现，使用的时候一个一个一次调用。</p>
+</li>
+<li><p>面向对象（oop):  把事物分解成为一个一个对象，然后由对象之间分工与合作。（先找出对象，并写出这些对象的功能）—&gt;以对象功能来划分问题，而不是步骤。</p>
+<ul>
+<li>封装性</li>
+<li>继承性</li>
+<li>多态性</li>
 </ul>
 </li>
-</ol>
-<h4 id="开启方式"><a href="#开启方式" class="headerlink" title="开启方式"></a>开启方式</h4><ol>
-<li><p>设置元素浮动—-&gt;给父元素.outer设置浮动</p>
-<p>优点：可以解决高度塌陷问题。</p>
-<p>缺点：父元素宽度没有了，并且脱离了文档流。</p>
-<p><img src="/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008195202084.png" alt="image-20201008195202084"></p>
+<li><p>面向过程</p>
+<ul>
+<li>优点：性能比面向对象高，适合跟硬件关系很密切的东西，比如单片机</li>
+<li>缺点：没有面向对象易维护、易复用、易扩展。 </li>
+</ul>
 </li>
-<li><p>将父级元素设置为行内块元素——&gt;高度没有塌陷但是宽度也没有了</p>
+<li><p>面向对象的思维特点：</p>
+<ul>
+<li>抽取对象共有的属性和行为组织成一个类。</li>
+<li>对类进行实例化，获取类的对象。</li>
+</ul>
 </li>
-</ol>
-<p><img src="/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008195416213.png" alt="image-20201008195416213"></p>
-<ol start="3">
-<li>将元素的<strong>overflow</strong>设置为非<strong>visible</strong>的值（推荐使用）</li>
-</ol>
-<p><img src="/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008195727427.png" alt="image-20201008195727427"></p>
-<h4 id="最佳解决办法（影响最小）"><a href="#最佳解决办法（影响最小）" class="headerlink" title="最佳解决办法（影响最小）"></a>最佳解决办法（影响最小）</h4><p>如果不希望某个元素因为其他元素浮动的影响而改变位置，可以通过<strong>clear</strong>属性来清除浮动元素对当前元素产生的影响。</p>
-<ol>
-<li><p>给定两个盒子，分别设置大小—-&gt;垂直排列</p>
-<p><img src="/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008200130219.png" alt="image-20201008200130219"></p>
+</ul>
+<p><strong>在javascript中，对象是一组无序的相关属性和方法的集合，所有的事物都是对象，例如字符串、数组、数值、函数等</strong></p>
+<ul>
+<li>对象是由属性和方法组成的：<ul>
+<li>属性：事物的特征，在对象中用属性来表示。</li>
+<li>方法：事物的行为，在对象中用方法来表示。</li>
+</ul>
 </li>
-</ol>
-<p>如果给上面的盒子设置左浮动—–&gt;第二个盒子会被第一个盒子覆盖</p>
-<p><img src="/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008200248556.png" alt="image-20201008200248556"></p>
-<ol start="2">
-<li><p>给box3设置<strong>clear:left</strong>，盒子便会下来</p>
-<p><img src="/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008200359038.png" alt="image-20201008200359038"></p>
+</ul>
+<h2 id="展开运算符"><a href="#展开运算符" class="headerlink" title="展开运算符"></a>展开运算符</h2><ul>
+<li>不定参数可以让你指定多个各自独立的参数，并通过整合后的数组来访问。</li>
+<li><strong>展开运算符可以让你指定一个数组，将他们打散后作为各自独立的参数传入函数。</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> values = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">45</span>,<span class="number">54</span>];</span><br><span class="line"><span class="comment">//相当于下面</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.max(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">45</span>,<span class="number">54</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.max(...values));<span class="comment">//54</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>可以将展开运算符与其他正常传入的参数混合使用。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> values = [<span class="number">-1</span>,<span class="number">-2</span>,<span class="number">-3</span>,<span class="number">-2</span>,<span class="number">-45</span>,<span class="number">-54</span>];</span><br><span class="line"><span class="built_in">console</span>.log(...values,<span class="number">0</span>);<span class="comment">//0</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>连接两个数组</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr1 = [<span class="string">'red'</span>,<span class="string">'green'</span>];</span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="string">'blue'</span>,<span class="string">'yellow'</span>];</span><br><span class="line"><span class="keyword">let</span> arr = [...arr1,...arr2];</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//["red", "green", "blue", "yellow"]</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>数据结构：将数组的每个数据拆开，放入一个新的数组</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'red'</span>,<span class="string">'green'</span>];</span><br><span class="line"><span class="keyword">let</span> y;</span><br><span class="line">[red,...y] = arr;</span><br><span class="line"><span class="built_in">console</span>.log(y);<span class="comment">//'green'</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>连接两个对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//两个对象连接返回新的对象</span></span><br><span class="line"> <span class="keyword">let</span> person1 = &#123;</span><br><span class="line">       name:<span class="string">'jack'</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">let</span> person2 = &#123;</span><br><span class="line">      age:<span class="number">18</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//将两个对象连接起来</span></span><br><span class="line"> <span class="keyword">let</span> person = &#123;...person1,...person2&#125;;</span><br><span class="line"> <span class="built_in">console</span>.log(person);<span class="comment">//&#123;name: "jack", age: 18&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>数组加上对象返回新的数组</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">  name:<span class="string">'jack'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> arr = [&#123;</span><br><span class="line">  age:<span class="number">12</span></span><br><span class="line">&#125;]</span><br><span class="line"><span class="comment">//连接对象和数组</span></span><br><span class="line"><span class="keyword">let</span> y = [person,...arr];</span><br><span class="line"><span class="built_in">console</span>.log(y);<span class="comment">//0: &#123;name: "jack"&#125;</span></span><br><span class="line">								<span class="comment">//1: &#123;age: 12&#125;</span></span><br><span class="line"><span class="comment">//会被解析成一个数组里面包含两个对象的形式</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>数组拼接字符串</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = [<span class="string">'red'</span>,<span class="string">'green'</span>];</span><br><span class="line"><span class="keyword">let</span> array1 = <span class="string">'zhangsan'</span>;</span><br><span class="line"><span class="keyword">let</span> result = [...array,array1];</span><br><span class="line"> <span class="built_in">console</span>.log(result);<span class="comment">//["red", "green", "zhangsan"]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="ES6创建类和ES5的区别"><a href="#ES6创建类和ES5的区别" class="headerlink" title="ES6创建类和ES5的区别"></a>ES6创建类和ES5的区别</h2><ul>
+<li><p>ES6创建类：<strong>class关键字后接类的名字</strong></p>
 </li>
-</ol>
-<h4 id="原理：设置清除浮动后，浏览器会自动为元素添加一个上外边距，使其位置不受其他元素的影响，但是box1依然浮动"><a href="#原理：设置清除浮动后，浏览器会自动为元素添加一个上外边距，使其位置不受其他元素的影响，但是box1依然浮动" class="headerlink" title="原理：设置清除浮动后，浏览器会自动为元素添加一个上外边距，使其位置不受其他元素的影响，但是box1依然浮动"></a>原理：设置清除浮动后，浏览器会自动为元素添加一个上外边距，使其位置不受其他元素的影响，但是box1依然浮动</h4><ol start="3">
-<li><p>添加一个盒子—-box2,并且给box2设置为右浮动，此时box3受到两个盒子的影响</p>
-<p><img src="/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008200758027.png" alt="image-20201008200758027"></p>
+<li><p>通过<strong>constructor方法名来定义构造函数</strong>，构造函数中创建所有的自有属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>(<span class="title">name</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//相当于定义的构造函数</span></span><br><span class="line">  <span class="keyword">constructor</span>(name)&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//相当于添加到原型上的方法</span></span><br><span class="line">  sayName()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
-</ol>
-<p>此时给box3清除浮动——&gt;左浮动—-&gt;清除box1对他的影响</p>
-<p>右浮动—–&gt;清除box2对他的影响</p>
-<p><strong>clear:both;</strong>—-&gt;清除对他影响最大的盒子的影响</p>
-<h3 id="利用clear解决高度塌陷问题"><a href="#利用clear解决高度塌陷问题" class="headerlink" title="利用clear解决高度塌陷问题"></a>利用clear解决高度塌陷问题</h3><p>方法一：在box1里面增加一个盒子—-&gt;填充文字后，高度便会撑开</p>
-<p><img src="/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008201255014.png" alt="image-20201008201255014"></p>
-<p>当我们给box3设置<strong>clear:both;</strong>后</p>
-<p><img src="/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008201825155.png" alt="image-20201008201825155"></p>
-<p>但是缺点是：解决高度塌陷没有副作用，但是在网页中作为结构该元素没有用</p>
-<h4 id="使用after伪元素"><a href="#使用after伪元素" class="headerlink" title="使用after伪元素"></a>使用after伪元素</h4><p>给Box1后面添加伪元素</p>
-<p><img src="/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008202346120.png" alt="image-20201008202346120"></p>
-<h3 id="外边距重叠问题"><a href="#外边距重叠问题" class="headerlink" title="外边距重叠问题"></a>外边距重叠问题</h3><p>当我们给父元素和子元素都设置宽高后，如果这时候给子元素一个<strong>margin-top</strong>值，两个盒子会一起向下移动</p>
-<p><img src="/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008202635784.png" alt="image-20201008202635784"></p>
-<h5 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h5><p>相似原理—–&gt;给box1添加一个伪元素</p>
-<p><img src="/ice-ui/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/image-20201008202805696.png" alt="image-20201008202805696"></p>
-<h3 id="综上：解决高度塌陷和外边距重叠可以使用下面写法"><a href="#综上：解决高度塌陷和外边距重叠可以使用下面写法" class="headerlink" title="综上：解决高度塌陷和外边距重叠可以使用下面写法"></a>综上：解决高度塌陷和外边距重叠可以使用下面写法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.clearfix::before,</span><br><span class="line">.clearfix::after&#123;</span><br><span class="line">  	content: '';</span><br><span class="line">	display: table;</span><br><span class="line">	clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</ul>
+<h3 id="为什么使用类语法"><a href="#为什么使用类语法" class="headerlink" title="为什么使用类语法"></a>为什么使用类语法</h3><ul>
+<li>函数声明可以被提升，但是类声明和let声明类似，不能被提升；真正执行声明语句之前，会一直存在临时死区中。</li>
+<li>类声明的所有代码将严格执行在严格模式下。</li>
+<li>在类中，所有的方法都是不可枚举的，在自定义类型中，需要通过Object.defineProperty()手工指定某个方法不可枚举。</li>
+<li>使用除关键字new以外的方式调用类的构造函数会导致程序抛出错误。</li>
+<li>在类中修改类名会导致程序报错，但是可以在外部修改。</li>
+</ul>
+<h3 id="类的声明形式"><a href="#类的声明形式" class="headerlink" title="类的声明形式"></a>类的声明形式</h3><ul>
+<li><p><strong>声明形式：由关键字function或者class进行定义，后面跟一个标识符</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>()</span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>表达式形式：为了声明相应变量或传入函数作为参数(除了语法，类表达式在功能上等价于类声明）。</strong></p>
+<ul>
+<li><strong>基本的类表达式语法</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> PersonCalss = <span class="class"><span class="keyword">class</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name)&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  sayName()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//实例化类</span></span><br><span class="line"><span class="keyword">let</span> person = <span class="keyword">new</span> PersonClass(<span class="string">"Bob"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(person <span class="keyword">instanceof</span> PersonClass);<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(person <span class="keyword">instanceof</span> <span class="built_in">Object</span>);<span class="comment">//true</span></span><br><span class="line"><span class="comment">//typeof用来检测一个变量的类型</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> PersonClass);<span class="comment">//function</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> PersonClass.prototype.sayName);<span class="comment">//function</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>命名类表达式：class后面添加一个标识符</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">let</span> PersonCalss = <span class="class"><span class="keyword">class</span> <span class="title">PersonClass2</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name)&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  sayname()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> PersonClass);<span class="comment">//function</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> Personclass2);<span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Module-用模块封装代码"><a href="#Module-用模块封装代码" class="headerlink" title="Module:用模块封装代码"></a>Module:用模块封装代码</h2></li>
+<li><p>什么是模块化开发？</p>
+</li>
+<li><p>一个模块就是实现一个特定功能的文件，有了模块可以更方便的使用别人的代码，用什么功能就加载什么模块</p>
+</li>
+<li><p>模块化开发的好处？</p>
+<ul>
+<li>解决命名冲突问题（在模块顶部创建的变量不会自动被添加到全局作用域，这个变量仅在当前作用域有效）。</li>
+<li>提高代码复用率和维护性。</li>
+<li>依赖关系的管理。</li>
+</ul>
+</li>
+</ul>
+<h3 id="导出的基本语法"><a href="#导出的基本语法" class="headerlink" title="导出的基本语法"></a>导出的基本语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//导出变量</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> color = <span class="string">'red'</span>;</span><br><span class="line"><span class="comment">//导出函数</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1,num2</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num1+num2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//导出类</span></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name)&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//模块私有的不导出---&gt;人合并未显示导出的变量、函数或类都是模块私有的，外部不可以访问。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">s1,s2</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> s1 + s2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//也可以使用这种方式导出函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1,num2</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> sum;</span><br></pre></td></tr></table></figure>
+
+<h3 id="导入的基本语法"><a href="#导入的基本语法" class="headerlink" title="导入的基本语法"></a>导入的基本语法</h3><ul>
+<li><strong>import关键字导入：要导入的标识符，标识符应该从哪个模块导入。</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.导入单个绑定</span></span><br><span class="line"><span class="keyword">import</span> &#123;sum&#125; <span class="keyword">from</span> <span class="string">'./example.js'</span>;</span><br><span class="line"><span class="comment">//不能给导入的绑定重新赋值</span></span><br><span class="line">sum = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.导入多个绑定</span></span><br><span class="line"><span class="keyword">import</span> &#123;sum,multify,magicNumber&#125; <span class="keyword">from</span> <span class="string">'./example.js'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>导入整个模块：可以导入整个模块作为单一的对象，然后所有的导出可以作为对象的属性使用。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> example <span class="keyword">from</span> <span class="string">'./example.js'</span>;<span class="comment">//从example.js中导出的所有绑定被添加到一个example的对象中，指定的导出作为example的属性访问。</span></span><br><span class="line"><span class="built_in">console</span>.log(example.sum(<span class="number">1</span>,<span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意：不管在import语句中把一个模块写了多少次，该模块将只执行一次。导入模块的代码执行后，实例化的模块被保存在内存中，只要另一个import语句引用它就可以重复使用。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">import</span> &#123;sum&#125; <span class="keyword">from</span> <span class="string">'./example.js'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;multify&#125; <span class="keyword">from</span> <span class="string">'./example.js'</span>;</span><br><span class="line"><span class="comment">//上面虽然导出了两次，但是example.js只执行一次</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h3><ul>
+<li>使用不同的名称导出一个函数，可以用<strong>as</strong>关键字来制定函数在模块外应该被称为什么名称。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1,num2</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//导出---&gt;add是导出的名称</span></span><br><span class="line"><span class="keyword">export</span> &#123;sum <span class="keyword">as</span> add&#125;;</span><br><span class="line"><span class="comment">//导入时用add这个名称</span></span><br><span class="line"><span class="keyword">import</span> &#123;add&#125; <span class="keyword">from</span> <span class="string">'./example.js'</span>;</span><br><span class="line"><span class="comment">//如果在导入时也想使用不同的名称，也可以用as关键字</span></span><br><span class="line"><span class="keyword">import</span> &#123;add <span class="keyword">as</span> sum&#125; <span class="keyword">from</span> <span class="string">'./example.js'</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="模块的默认值"><a href="#模块的默认值" class="headerlink" title="模块的默认值"></a>模块的默认值</h3><ul>
+<li>通过<strong>default关键字</strong>指定的单个变量、函数或类。</li>
+<li><strong>只能为每个模块设置一个默认的导出值！！</strong></li>
+</ul>
+<h4 id="导出默认值"><a href="#导出默认值" class="headerlink" title="导出默认值"></a>导出默认值</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//由于是默认的导出，所以不需要一个名称</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//可以这样导出</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">num1,num2</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> add;</span><br><span class="line"><span class="comment">//使用重命名语法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1,num2</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> &#123;sum <span class="keyword">as</span> <span class="keyword">default</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="导入默认值"><a href="#导入默认值" class="headerlink" title="导入默认值"></a>导入默认值</h4><ul>
+<li>不需要大括号</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sum <span class="keyword">from</span> <span class="string">'./example.js'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果想把默认值和非默认值一起导入，可以用一条语句导入所有绑定</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> color = <span class="string">'red'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params">num1,num2</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//导入所有的绑定</span></span><br><span class="line"><span class="keyword">import</span> sum,&#123;color&#125; <span class="keyword">from</span> <span class="string">'./example.js'</span>;<span class="comment">//默认值必须排在非默认值之前</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="导出所有"><a href="#导出所有" class="headerlink" title="导出所有"></a>导出所有</h3><ul>
+<li>使用*****号</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> * <span class="keyword">from</span> <span class="string">'./example.js'</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="模版字面量"><a href="#模版字面量" class="headerlink" title="模版字面量"></a>模版字面量</h2><ul>
+<li><p><strong>多行字符串</strong>:一般创建多行字符串，如果使用单双引号，字符串必须在同一行。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> message = <span class="string">`hello</span></span><br><span class="line"><span class="string">world`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message);<span class="comment">//hello</span></span><br><span class="line">														<span class="comment">//world</span></span><br><span class="line"><span class="built_in">console</span>.log(mess.length);<span class="comment">//11</span></span><br></pre></td></tr></table></figure>
+
+<p>在反撇号的所有空白符都属于字符串的一部分，所以要小心缩进。</p>
+<ul>
+<li>可以嵌入变量（<strong>${变量名}</strong>）、运算式、函数调用等。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">"jack"</span>;</span><br><span class="line"><span class="keyword">let</span> message = <span class="string">`hello,<span class="subst">$&#123;name&#125;</span>`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message);<span class="comment">//hello,jack</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p><strong>基本的字符串格式化</strong>:将变量的值嵌入字符串</p>
+</li>
+<li><p><strong>HTML转义</strong>：向HTML插入经过安全转换后的字符串的能力</p>
+</li>
+</ul>
+<h4 id="基础语法："><a href="#基础语法：" class="headerlink" title="基础语法："></a>基础语法：</h4><ul>
+<li><p>用<strong>`</strong>替换单双引号</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> message = <span class="string">`hello world`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message);</span><br><span class="line"><span class="comment">//如果你想要在字符串中使用反撇号，那么用反斜杠转义就可以</span></span><br><span class="line"><span class="keyword">let</span> message = <span class="string">`\`Hello\`world!`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message);<span class="comment">//`Hello`world!</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h2 id="ES6函数"><a href="#ES6函数" class="headerlink" title="ES6函数"></a>ES6函数</h2><ul>
+<li><p><strong>ES6中的默认参数值</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//url为必须传入的值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeRequest</span> (<span class="params">url,timeout = <span class="number">2000</span>,callback = function(</span>)</span>&#123;&#125;)</span><br><span class="line"><span class="comment">//调用函数</span></span><br><span class="line"><span class="comment">//1.使用timeout盒callback的默认值</span></span><br><span class="line">makeRequest(<span class="string">'foo'</span>);</span><br><span class="line"><span class="comment">//2.使用callback的默认值</span></span><br><span class="line">makeRequest(<span class="string">'foo'</span>,<span class="number">400</span>);</span><br><span class="line"><span class="comment">//3.不使用默认值</span></span><br><span class="line">makeRequest(<span class="string">'f00'</span>,<span class="number">400</span>,<span class="function"><span class="keyword">function</span>(<span class="params">body</span>)</span>&#123;</span><br><span class="line">  doSomething(body);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>默认参数值对arguments参数的影响</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">person</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(name === <span class="built_in">arguments</span>[<span class="number">0</span>]);<span class="comment">//true</span></span><br><span class="line">  <span class="built_in">console</span>.log(age === <span class="built_in">arguments</span>[<span class="number">1</span>]);<span class="comment">//true</span></span><br><span class="line">  <span class="comment">//修改name和age的值，arguments也会相应的更新</span></span><br><span class="line">  name = <span class="string">'lisi'</span>;</span><br><span class="line">    age = <span class="number">12</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(name = <span class="built_in">arguments</span>[<span class="number">0</span>]);<span class="comment">//true</span></span><br><span class="line">  <span class="built_in">console</span>.log(age = <span class="built_in">arguments</span>[<span class="number">1</span>]);<span class="comment">//true</span></span><br><span class="line">&#125;</span><br><span class="line">person(<span class="string">'zhangsan'</span>,<span class="number">14</span>)；</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>在严格模式下，当修改了参数的值，arguments对象不再随之改变，后面输出为false—–&gt;在es6中，如果一个参数使用了默认值，无论是否定义了严格模式，arguments的行为都和严格模式保持一致。</p>
+<p>​    </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">num1, num2 = <span class="number">4</span></span>) </span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.length);<span class="comment">//1</span></span><br><span class="line">     <span class="built_in">console</span>.log(num1 === <span class="built_in">arguments</span>[<span class="number">0</span>]);<span class="comment">//true</span></span><br><span class="line">     <span class="built_in">console</span>.log(num2 === <span class="built_in">arguments</span>[<span class="number">1</span>]);<span class="comment">//false</span></span><br><span class="line">     num1 = <span class="number">2</span>;</span><br><span class="line">     num2 = <span class="number">3</span>;</span><br><span class="line">     <span class="built_in">console</span>.log(num1 === <span class="built_in">arguments</span>[<span class="number">0</span>]);<span class="comment">//false</span></span><br><span class="line">     <span class="built_in">console</span>.log(num2 === <span class="built_in">arguments</span>[<span class="number">1</span>]);<span class="comment">//false</span></span><br><span class="line">    &#125;</span><br><span class="line">   <span class="comment">//调用函数</span></span><br><span class="line">   add(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="不定参数"><a href="#不定参数" class="headerlink" title="不定参数"></a>不定参数</h3><ul>
+<li><p>在函数的命名参数前加<strong>…</strong>就表示这是一个不定参数，该参数是一个数组，包含着自它之后传入的所有参数，通过数组名可以逐一访问里面的参数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pick</span>(<span class="params">object,...keys</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = object.create(<span class="literal">null</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;len = keys.length; i &lt; len;i++)&#123;</span><br><span class="line">    result[keys[i] = object[keys[i]];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>不定参数的使用规则：<ul>
+<li>每个函数最多只能声明一个不定参数</li>
+<li>并且不定参数一定要放在所有参数的末尾</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><h4 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h4><ul>
+<li><p>由函数参数、箭头、函数体组成</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> reflect = <span class="function"><span class="params">value</span> =&gt;</span>value;</span><br><span class="line"><span class="comment">//相当于下面</span></span><br><span class="line"><span class="keyword">let</span> reflect = <span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>当箭头函数只有一个参数时，可以直接写参数名，箭头右侧的表达式被求值后便立即返回。</li>
+<li>传入两个或两个以上的参数，需要加小括号</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> reflect = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span>num1+num2;</span><br><span class="line"><span class="comment">//相当于</span></span><br><span class="line"><span class="keyword">let</span> reflect = <span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num1+num2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果函数没有参数，也要在声明的时候加上小括号</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> reflect = <span class="function"><span class="params">()</span> =&gt;</span><span class="string">"Bob"</span>;</span><br><span class="line"><span class="comment">//相当于</span></span><br><span class="line"><span class="keyword">let</span> reflect = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"Bob"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>编写由多个表达式组成的更传统的函数体，要用花括号包裹函数体，并且显示的定义一个返回值。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> reflect = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果想创建一对空函数，需要写一对没有内容的花括号</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> reflect = <span class="function"><span class="params">()</span> =&gt;</span>&#123;&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>让箭头函数返回一个对象字面量</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> reflect = <span class="function"><span class="params">id</span> =&gt;</span>(&#123;<span class="attr">id</span>:id,<span class="attr">name</span>:<span class="string">'Tom'</span>&#125;);</span><br><span class="line"><span class="comment">//相当于</span></span><br><span class="line"><span class="keyword">let</span> reflect = <span class="function"><span class="params">id</span> =&gt;</span>&#123;</span><br><span class="line"> <span class="keyword">return</span> &#123;</span><br><span class="line">   id:id,</span><br><span class="line">   name:<span class="string">'Tom'</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="创建立即执行函数表达式"><a href="#创建立即执行函数表达式" class="headerlink" title="创建立即执行函数表达式"></a>创建立即执行函数表达式</h4><ul>
+<li><p>当你想创建一个与其他程序隔离的作用域时，这种模式非常方便。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//普通函数创建立即执行函数表达式</span></span><br><span class="line"><span class="keyword">let</span> person = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    getName:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;(<span class="string">"Nicholas"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(person.getName());</span><br><span class="line"></span><br><span class="line"><span class="comment">//箭头函数创建立即执行函数表达式</span></span><br><span class="line"><span class="keyword">let</span> person = <span class="function">(<span class="params">(name</span>)) =&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    getName:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)(<span class="string">"Nicholas"</span>)；</span><br></pre></td></tr></table></figure>
+
+<p>箭头函数创建立即执行函数表达式，小括号只包含箭头函数的定义，不包含后面的内容（“Nicholas”）</p>
+</li>
+</ul>
+<h4 id="1-箭头函数没有this绑定"><a href="#1-箭头函数没有this绑定" class="headerlink" title="1. 箭头函数没有this绑定"></a>1. 箭头函数没有this绑定</h4><ul>
+<li>ES5中，函数内的this值可以根据函数调用的上下文而改变</li>
+<li>ES6中箭头函数没有this绑定，必须通过查找作用域链来决定其值。如果箭头函数被非箭头函数包含，则this绑定的是非箭头函数的this;否则，this的值会被设置为全局对象。</li>
+</ul>
+<h4 id="2-不能通过new关键字调用"><a href="#2-不能通过new关键字调用" class="headerlink" title="2. 不能通过new关键字调用"></a>2. 不能通过new关键字调用</h4><ul>
+<li>因为箭头函数没有[Construct]方法，所以不能被当作构造函数</li>
+</ul>
+<h4 id="3-没有原型"><a href="#3-没有原型" class="headerlink" title="3. 没有原型"></a>3. 没有原型</h4><ul>
+<li>由于不能通过new关键字调用，所以没有构建原型的需求。</li>
+</ul>
+<h4 id="4-不支持arguments对象"><a href="#4-不支持arguments对象" class="headerlink" title="4. 不支持arguments对象"></a>4. 不支持arguments对象</h4><ul>
+<li>访问函数的参数通过<strong>命名参数</strong>和<strong>不定参数</strong>两种方式。</li>
+</ul>
+<h4 id="5-不支持重复的命名参数"><a href="#5-不支持重复的命名参数" class="headerlink" title="5. 不支持重复的命名参数"></a>5. 不支持重复的命名参数</h4><h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h3 id="1-生命周期"><a href="#1-生命周期" class="headerlink" title="1.生命周期"></a>1.生命周期</h3><ul>
+<li><strong>pending：等待状态，比如正在进行网络请求，后者定时器没有到时间。</strong></li>
+<li><strong>Fulfilled:异步操作成功完成(满足状态，当我们主动回调了resolve时，就处于该状态，并且会回调.then())。</strong></li>
+<li><strong>Rejected:拒绝状态，当我们主动回调了reject时，就处于该状态，并且调用catch()</strong>;</li>
+</ul>
+<h3 id="2-创建实例"><a href="#2-创建实例" class="headerlink" title="2.创建实例"></a>2.创建实例</h3><ul>
+<li>promise接受一个函数作为参数，该函数接受两个参数，这两个参数也是函数。</li>
+<li><strong>resolve函数的作用：在异步操作成功时调用，并将异步操作的结果，作为参数传递出去，并且用then()方法指定resolved状态和rejected状态的回调函数。</strong></li>
+<li><strong>reject函数的作用，在异步操作失败时调用，并将异步操作的结果，作为参数传递出去。</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="comment">/*异步操作成功*/</span>)&#123;</span><br><span class="line">     resolve(value);</span><br><span class="line">     &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">     reject(error);                  </span><br><span class="line">     &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 
       
@@ -272,21 +461,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -337,7 +511,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://xulibin123.gitee.io/ice-ui/2020/10/08/%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E4%B8%8EBFC/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://xulibin123.gitee.io/ice-ui/2020/12/11/es6%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -351,18 +525,18 @@
   
 <nav id="article-nav">
   
-    <a href="/ice-ui/2020/10/16/%E7%94%A8%E6%88%B7%E5%88%87%E6%8D%A2%E7%9A%84input%E5%A4%8D%E7%94%A8%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/ice-ui/2020/12/11/css3/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          input复用
+          css3
         
       </div>
     </a>
   
   
-    <a href="/ice-ui/2020/09/09/%E6%94%BE%E5%A4%A7%E9%95%9C%E6%95%88%E6%9E%9C/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">放大镜</div>
+    <a href="/ice-ui/2020/11/14/vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84data%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%EF%BC%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue组件的data</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -389,7 +563,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#浮动典型问题"><span class="toc-number">1.</span> <span class="toc-text">浮动典型问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#高度塌陷问题："><span class="toc-number">1.1.</span> <span class="toc-text">高度塌陷问题：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决高度塌陷问题"><span class="toc-number">2.</span> <span class="toc-text">解决高度塌陷问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#BFC"><span class="toc-number">2.1.</span> <span class="toc-text">BFC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开启方式"><span class="toc-number">2.2.</span> <span class="toc-text">开启方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最佳解决办法（影响最小）"><span class="toc-number">2.3.</span> <span class="toc-text">最佳解决办法（影响最小）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#原理：设置清除浮动后，浏览器会自动为元素添加一个上外边距，使其位置不受其他元素的影响，但是box1依然浮动"><span class="toc-number">2.4.</span> <span class="toc-text">原理：设置清除浮动后，浏览器会自动为元素添加一个上外边距，使其位置不受其他元素的影响，但是box1依然浮动</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用clear解决高度塌陷问题"><span class="toc-number">3.</span> <span class="toc-text">利用clear解决高度塌陷问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用after伪元素"><span class="toc-number">3.1.</span> <span class="toc-text">使用after伪元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外边距重叠问题"><span class="toc-number">4.</span> <span class="toc-text">外边距重叠问题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#解决办法："><span class="toc-number">4.0.1.</span> <span class="toc-text">解决办法：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#综上：解决高度塌陷和外边距重叠可以使用下面写法"><span class="toc-number">5.</span> <span class="toc-text">综上：解决高度塌陷和外边距重叠可以使用下面写法</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#es6相关语法"><span class="toc-number">1.</span> <span class="toc-text">es6相关语法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面向过程和面向对象的区别："><span class="toc-number"></span> <span class="toc-text">面向过程和面向对象的区别：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#展开运算符"><span class="toc-number"></span> <span class="toc-text">展开运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6创建类和ES5的区别"><span class="toc-number"></span> <span class="toc-text">ES6创建类和ES5的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么使用类语法"><span class="toc-number">1.</span> <span class="toc-text">为什么使用类语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类的声明形式"><span class="toc-number">2.</span> <span class="toc-text">类的声明形式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Module-用模块封装代码"><span class="toc-number"></span> <span class="toc-text">Module:用模块封装代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#导出的基本语法"><span class="toc-number">1.</span> <span class="toc-text">导出的基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入的基本语法"><span class="toc-number">2.</span> <span class="toc-text">导入的基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重命名"><span class="toc-number">3.</span> <span class="toc-text">重命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块的默认值"><span class="toc-number">4.</span> <span class="toc-text">模块的默认值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#导出默认值"><span class="toc-number">4.1.</span> <span class="toc-text">导出默认值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#导入默认值"><span class="toc-number">4.2.</span> <span class="toc-text">导入默认值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导出所有"><span class="toc-number">5.</span> <span class="toc-text">导出所有</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模版字面量"><span class="toc-number"></span> <span class="toc-text">模版字面量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基础语法："><span class="toc-number">0.1.</span> <span class="toc-text">基础语法：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6函数"><span class="toc-number"></span> <span class="toc-text">ES6函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#不定参数"><span class="toc-number">1.</span> <span class="toc-text">不定参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#箭头函数"><span class="toc-number">2.</span> <span class="toc-text">箭头函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#语法："><span class="toc-number">2.1.</span> <span class="toc-text">语法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建立即执行函数表达式"><span class="toc-number">2.2.</span> <span class="toc-text">创建立即执行函数表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-箭头函数没有this绑定"><span class="toc-number">2.3.</span> <span class="toc-text">1. 箭头函数没有this绑定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-不能通过new关键字调用"><span class="toc-number">2.4.</span> <span class="toc-text">2. 不能通过new关键字调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-没有原型"><span class="toc-number">2.5.</span> <span class="toc-text">3. 没有原型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-不支持arguments对象"><span class="toc-number">2.6.</span> <span class="toc-text">4. 不支持arguments对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-不支持重复的命名参数"><span class="toc-number">2.7.</span> <span class="toc-text">5. 不支持重复的命名参数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise"><span class="toc-number"></span> <span class="toc-text">Promise</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-生命周期"><span class="toc-number">1.</span> <span class="toc-text">1.生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-创建实例"><span class="toc-number">2.</span> <span class="toc-text">2.创建实例</span></a></li></ol>
                     </div>
                 </span>
             </div>
